@@ -34,8 +34,8 @@ $("#singcms-button-submit").click(function(){
  */
 $('.singcms-table #singcms-edit').on('click',function(){
     var id = $(this).attr('attr-id');
-    var url = SCOPE.edit_url + '&id='+id;
-    window.location.href=url;
+    var url = SCOPE.edit_url + '?id='+id;
+    window.location.href = url;
 });
 
 
