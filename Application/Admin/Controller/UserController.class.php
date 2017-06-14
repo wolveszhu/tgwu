@@ -1,0 +1,19 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Administrator:stimmer
+ * Date: 2017/6/13
+ * Time: 16:00
+ */
+
+namespace Admin\Controller;
+use Think\Controller;
+
+class UserController extends CommonController {
+    public function personal(){
+        $res = $this -> getLoginUser();
+        $user = D('user') -> getDetailByNickName($res['nickname']);
+        $this -> assign('userDet',$user);
+        $this -> display();
+    }
+}
