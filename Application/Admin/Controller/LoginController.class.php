@@ -8,10 +8,13 @@
 
 namespace Admin\Controller;
 use Think\Controller;
-use Common\Model;
 
 class LoginController extends Controller{
     public function index(){
+        if(session('adminUser')) {
+//            $this -> redirect('admin.php?c=Index&a=index');
+            $this -> redirect('Index/index');
+        }
         $this -> display();
     }
 
@@ -39,5 +42,11 @@ class LoginController extends Controller{
 
         session('adminUser',$res);
         return show(1,'登录成功!');
+    }
+
+    public function logout(){
+        session('adminUser',null);
+//        $this -> redirect('/admin.php?c=Login&a=index');
+        $this -> redirect('Login/index');
     }
 }
