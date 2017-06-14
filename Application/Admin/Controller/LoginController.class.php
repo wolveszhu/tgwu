@@ -23,17 +23,17 @@ class LoginController extends Controller{
         $pwd = $_POST['password'];
 
         if(!trim($username)){
-            return show(0,'用户名不能为空');
+            return show(0,'管理员名不能为空');
         }
 
         if(!trim($pwd)){
             return show(0,'密码不能为空');
         }
 
-        $res = D('user') -> getDetailByNickName($username);
+        $res = D('Admin') -> getAdminByName($username);
 
-        if(!$res || $res['status'] != 1){
-            return show(0,'用户不存在');
+        if(!$res){
+            return show(0,'管理员不存在');
         }
 
         if($res['password'] != getMd5Password($pwd)){
