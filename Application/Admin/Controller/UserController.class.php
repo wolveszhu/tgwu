@@ -10,10 +10,7 @@ namespace Admin\Controller;
 use Think\Controller;
 
 class UserController extends CommonController {
-    public function personal(){
-        $res = $this -> getLoginUser();
-        $user = D('user') -> getDetailByNickName($res['nickname']);
-        $this -> assign('userDet',$user);
-        $this -> display();
+    public function index(){
+
     }
 }
