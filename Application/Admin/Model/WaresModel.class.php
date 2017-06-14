@@ -10,5 +10,9 @@ namespace Admin\Model;
 use Think\Model;
 
 class WaresModel extends Model{
+    private $_db = '';
 
+    public function __construct(){
+        $this -> _db = M('wares');
+    }
 }
