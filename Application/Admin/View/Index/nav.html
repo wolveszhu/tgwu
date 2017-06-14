@@ -13,7 +13,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li>
-                    <a href="{:U('User/personal')}"><i class="fa fa-fw fa-user"></i> 个人中心</a>
+                    <a href="{:U('Admin/personal')}"><i class="fa fa-fw fa-user"></i> 个人中心</a>
                 </li>
 
                 <li class="divider"></li>
@@ -27,16 +27,22 @@
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav nav_list">
             <li>
-                <a><i class="fa fa-fw fa-dashboard"></i>  首页</a>
+                <a href="{:U('Index/index')}"><i class="fa fa-fw fa-dashboard"></i>  首页</a>
             </li>
             <li>
-                <a><i class="fa fa-fw fa-bar-chart-o"></i>  轮播图管理</a>
+                <a href="{:U('Carousel/index')}"><i class="fa fa-fw fa-bar-chart-o"></i>  轮播图管理</a>
             </li>
             <li>
-                <a><i class="fa fa-fw fa-bar-chart-o"></i>  邀请码管理</a>
+                <a href="{:U('Invitation/index')}"><i class="fa fa-fw fa-bar-chart-o"></i>  邀请码管理</a>
             </li>
             <li>
-                <a><i class="fa fa-fw fa-bar-chart-o"></i>  分类管理</a>
+                <a href="{:U('Category/index')}"><i class="fa fa-fw fa-bar-chart-o"></i>  分类管理</a>
+            </li>
+            <li>
+                <a href="{:U('Wares/index')}"><i class="fa fa-fw fa-bar-chart-o"></i>  商品管理</a>
+            </li>
+            <li>
+                <a href="{:U('User/index')}"><i class="fa fa-fw fa-bar-chart-o"></i>  用户管理</a>
             </li>
         </ul>
     </div>
