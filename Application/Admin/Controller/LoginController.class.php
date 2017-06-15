@@ -46,7 +46,6 @@ class LoginController extends Controller{
 
     public function logout(){
         session('adminUser',null);
-//        $this -> redirect('/admin.php?c=Login&a=index');
         $this -> redirect('Login/index');
     }
 }
