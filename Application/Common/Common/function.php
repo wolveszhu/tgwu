@@ -30,3 +30,10 @@ function status($status) {
     }
     return $str;
 }
+
+function isCarousel($carousel) {
+    if($carousel) {
+        return '<span style="color:red">有</span>';
+    }
+    return '无';
+}
