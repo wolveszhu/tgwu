@@ -15,9 +15,10 @@ $("#singcms-button-submit").click(function(){
     $(data).each(function(i){
        postData[this.name] = this.value;
     });
-    console.log(postData);
+    // console.log(postData);
     // 将获取到的数据post给服务器
     url = SCOPE.save_url;
+    console.log(url);
     jump_url = SCOPE.jump_url;
     $.post(url,postData,function(result){
         if(result.status == 1) {
@@ -46,15 +47,14 @@ $('.singcms-table #singcms-delete').on('click',function(){
     var id = $(this).attr('attr-id');
     var a = $(this).attr("attr-a");
     var message = $(this).attr("attr-message");
-    var url = SCOPE.set_status_url;
+    var url = SCOPE.delete_url;
 
-    data = {};
+    var data = {};
     data['id'] = id;
-    data['status'] = -1;
 
     layer.open({
         type : 0,
-        title : '是否提交？',
+        title : '提示信息',
         btn: ['yes', 'no'],
         icon : 3,
         closeBtn : 2,
@@ -89,7 +89,7 @@ function todelete(url, data) {
 $('#button-listorder').click(function() {
     // 获取 listorder内容
     var data = $("#singcms-listorder").serializeArray();
-    postData = {};
+    var postData = {};
     $(data).each(function(i){
        postData[this.name] = this.value;
     });
@@ -115,13 +115,13 @@ $('.singcms-table #singcms-on-off').on('click', function(){
     var status = $(this).attr("attr-status");
     var url = SCOPE.set_status_url;
 
-    data = {};
+    var data = {};
     data['id'] = id;
     data['status'] = status;
 
     layer.open({
         type : 0,
-        title : '是否提交？',
+        title : '提示信息',
         btn: ['yes', 'no'],
         icon : 3,
         closeBtn : 2,
