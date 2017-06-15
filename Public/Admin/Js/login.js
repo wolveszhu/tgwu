@@ -23,6 +23,7 @@ var login = {
         }
 
         var url = 'check';
+        console.log(url);
         var data = {'username':username,'password':password};
 
         $.post(url,data,function (result) {
