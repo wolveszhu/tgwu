@@ -37,9 +37,9 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">轮播图缩图:</label>
                             <div class="col-sm-5">
-                                <input id="file_upload"  type="file" multiple="true" name="carouselIcon">
+                                <input id="file_upload"  type="file" name="carouselIcon">
                                 <img style="display: none" id="upload_org_code_img" src="" width="150" height="150">
-                                <input id="file_upload_image" name="thumb" type="hidden" multiple="true" value="">
+                                <input id="file_upload_image" name="carouselIcon" type="hidden" multiple="true" value="">
                             </div>
                         </div>
                         <div class="form-group">
@@ -82,14 +82,14 @@
     var SCOPE = {
         'save_url' : 'add',
         'jump_url' : 'index',
-        'ajax_upload_image_url' : 'image/ajaxuploadimage',
+        'ajax_upload_image_url' : '{:U("image/ajaxUploadImage")}',
         'ajax_upload_swf' : '__PUBLIC__/Js/party/uploadify.swf',
     };
 
 </script>
 <!-- /#wrapper -->
 <script src="__PUBLIC__/Admin/Js/image.js"></script>
-<script>
+<!--<script>
     // 6.2
     KindEditor.ready(function(K) {
         window.editor = K.create('#editor_singcms',{
@@ -97,5 +97,5 @@
             afterBlur : function(){this.sync();}, //
         });
     });
-</script>
+</script>-->
 <include file="Index/footer" />
