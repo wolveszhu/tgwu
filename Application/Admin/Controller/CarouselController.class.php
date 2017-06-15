@@ -17,6 +17,9 @@ class CarouselController extends CommonController {
         $this -> display();
     }
 
+    /**
+     * 修改轮播图的信息
+     */
     public function edit(){
         $carouselId = $_GET['id'];
 
@@ -33,6 +36,11 @@ class CarouselController extends CommonController {
         $this -> display();
     }
 
+    /**
+     * 添加轮播图信息/展示添加信息的页面/更新操作
+     * 如果是添加信息 ，返回Boolean型的值，表示是否添加成功（0失败，1成功）
+     * 如果是更新操作，则调用save方法，返回值如save方法
+     */
     public function add(){
         if($_POST){
             if(!isset($_POST['carouselDesc']) || !$_POST['carouselDesc']){
@@ -58,6 +66,11 @@ class CarouselController extends CommonController {
         }
     }
 
+    /**
+     * @param array $data 需要更新的值
+     * @return boolean 返回是否成功的标志
+     * @desc 对更新的数据进行保存的操作
+     */
     public function save($data){
         $carouselId = $data['id'];
         unset($data['id']);
@@ -73,6 +86,9 @@ class CarouselController extends CommonController {
         }
     }
 
+    /**
+     * @return boolean 状态改变是否成功的标志
+     */
     public function setStatus(){
         try{
             if($_POST){
@@ -96,6 +112,11 @@ class CarouselController extends CommonController {
         }
     }
 
+
+    /**
+     * @return boolean 返回删除是否成功的标志
+     * @desc 删除轮播图的信息
+     */
     public function delete(){
         try{
             if($_POST){
@@ -116,6 +137,10 @@ class CarouselController extends CommonController {
         }
     }
 
+    /**
+     * @return  boolean 排序是否成功的标志
+     * @desc 对轮播图进行自主排序
+     */
     public function listorder(){
         $carouselSort = $_POST['carouselsort'];
         $jumpUrl = $_SERVER['HTTP_REFERER'];
