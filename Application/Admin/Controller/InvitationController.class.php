@@ -10,6 +10,6 @@ namespace Admin\Controller;
 
 class InvitationController extends CommonController {
     public function index(){
-
+        $this -> display();
     }
 }
