@@ -9,10 +9,20 @@
 namespace Admin\Controller;
 
 use Think\Exception;
+use Think\Page;
 
 class CarouselController extends CommonController {
     public function index(){
-        $carousels = D('carousel') -> getCarousels();
+        /**
+         * 分页操作逻辑
+         */
+        $page = $_GET['p'] ? $_GET['p'] : 1;
+        $pageSize = 5;
+        $carousels = D('Carousel') -> getCarouselsPage($page,$pageSize);
+        $carouselCount = D('Carousel') -> getCarouselCount();
+        $res = new Page($carouselCount,$pageSize);
+        $resPage = $res -> show();
+        $this -> assign('page',$resPage);
         $this -> assign('carousels',$carousels);
         $this -> display();
     }
@@ -158,7 +168,7 @@ class CarouselController extends CommonController {
                     }
                 }
                 if($errors){
-                    return show(0,'排序失败-' . implode(',',$errors),array('jump_url' => $jumpUrl));
+                    return show(0,'排序失败',array('jump_url' => $jumpUrl));
                 }
                 return show(1,'排序成功',array('jump_url' => $jumpUrl));
             }
