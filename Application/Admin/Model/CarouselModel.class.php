@@ -21,10 +21,24 @@ class CarouselModel extends Model{
      */
     public function getCarousels(){
         $data = [
+            'carouselSort' => 'desc',
             'id' => 'desc',
-            'status' => 'desc'
         ];
         return $this -> _db -> order($data) -> select();
+    }
+
+    public function getCarouselsPage($page,$pageSize){
+        $data = [
+            'carouselSort' => 'desc',
+        ];
+        $page = $page == 0 ? 1 : $page;
+        $offset = ($page - 1) * $pageSize;
+
+        return $this -> _db -> order($data) -> limit($offset,$pageSize) -> select();
+    }
+
+    public function getCarouselCount(){
+        return $this -> _db -> count('id');
     }
 
     /**
