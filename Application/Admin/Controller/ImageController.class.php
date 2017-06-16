@@ -7,32 +7,30 @@
  */
 
 namespace Admin\Controller;
+use Admin\Model\ImageUploadModel;
 use Think\Controller;
 
 class ImageController extends Controller{
     private $_uploadObj;
+    public function __construct() {
 
-    public function __construct()
-    {
     }
-
-    public function ajaxUploadImage(){
-        $upload = D('ImageUpload');
-        $res = $upload -> uploadImage();
-        if($res === false){
-            return show(0,'上传失败');
+    public function ajaxuploadimage() {
+        $upload = D("ImageUpload");
+        $res = $upload->imageUpload();
+        if($res===false) {
+            return show(0,'上传失败','');
         }else{
-            return show(1,'上传成功');
+            return show(1,'上传成功',$res);
         }
-    }
 
-    public function kindUpload(){
-        $upload = D('ImageUpload');
-        $res = $upload -> upload();
-        if($res === false){
+    }
+    public function kindupload(){
+        $upload = D("ImageUpload");
+        $res = $upload->upload();
+        if($res === false) {
             return showKind(1,'上传失败');
-        }else{
-            return showKind(0,$res);
         }
+        return showKind(0,$res);
     }
 }
