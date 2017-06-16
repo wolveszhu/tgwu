@@ -16,28 +16,28 @@ class ImageUploadModel extends Model{
 
     const UPLOAD = 'upload';
 
-    public function __construct(){
-        $this -> _uploadObj = new Upload();
+    public function __construct() {
+        $this->_uploadObj = new  \Think\Upload();
 
-        $this -> _uploadObj -> rootPath = './' . self::UPLOAD . '/';
-        $this -> _uploadObj -> subName = date(Y) . '/' . date(m) . '/' . date(d);
+        $this->_uploadObj->rootPath = './'.self::UPLOAD.'/';
+        $this->_uploadObj->subName = date(Y) . '/' . date(m) .'/' . date(d);
     }
 
-    public function upload(){
-        $res = $this -> _uploadObj -> upload();
+    public function upload() {
+        $res = $this->_uploadObj->upload();
 
-        if($res){
-            return '/' . self::UPLOAD . '/' . $res['imgFile']['savepath'] . $res['imgFile']['savename'];
+        if($res) {
+            return '/' .self::UPLOAD . '/' . $res['imgFile']['savepath'] . $res['imgFile']['savename'];
         }else{
             return false;
         }
     }
 
-    public function uploadImage(){
-        $res = $this -> _uploadObj -> upload();
+    public function imageUpload() {
+        $res = $this->_uploadObj->upload();
 
-        if($res){
-            return '/' . self::UPLOAD . '/' . $res['file']['savepath'] . $res['file']['savename'];
+        if($res) {
+            return '/' .self::UPLOAD . '/' . $res['file']['savepath'] . $res['file']['savename'];
         }else{
             return false;
         }
