@@ -10,6 +10,8 @@ namespace Admin\Controller;
 
 class InvitationController extends CommonController {
     public function index(){
+        $res = D('invitation') -> getInvitations();
+        $this -> assign('invitation',$res);
         $this -> display();
     }
 }
