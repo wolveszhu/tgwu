@@ -11,6 +11,8 @@ use Think\Controller;
 
 class UserController extends CommonController {
     public function index(){
-
+        $root = __ROOT__;
+        $this -> assign('root',$root);
+        $this -> display();
     }
 }
