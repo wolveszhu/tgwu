@@ -46,6 +46,9 @@ class CarouselController extends CommonController {
             if(!isset($_POST['carouselDesc']) || !$_POST['carouselDesc']){
                 return show(0,'描述不存在');
             }
+            if(!isset($_POST['carouselIcon']) || !$_POST['carouselIcon']){
+                return show(0,'轮播图不存在');
+            }
             if(!isset($_POST['carouselPath']) || !$_POST['carouselPath']){
                 return show(0,'跳转地址不存在');
             }
