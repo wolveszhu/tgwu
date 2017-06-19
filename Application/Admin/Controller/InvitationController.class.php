@@ -8,10 +8,18 @@
 
 namespace Admin\Controller;
 
+use Think\Page;
+
 class InvitationController extends CommonController {
     public function index(){
-        $res = D('invitation') -> getInvitations();
-        $this -> assign('invitations',$res);
+        $p = $_GET['p'] ? $_GET['p'] : 1;
+        $pageSize = 5;
+        $invitations = D('Invitation') -> getInvitationPage($p,$pageSize);
+        $invCount = D('Invitation') -> getInvitationCount();
+        $res = new Page($invCount,$pageSize);
+        $resPage = $res -> show();
+        $this -> assign('page',$resPage);
+        $this -> assign('invitations',$invitations);
         $this -> display();
     }
 }
