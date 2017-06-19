@@ -23,4 +23,18 @@ class InvitationModel extends Model {
         return $this -> _db -> order($data) -> select();
     }
 
+    public function getInvitationPage($page,$pageSize){
+        $data = [
+            'id' => 'desc',
+        ];
+
+        $page = $page == 0 ? 1 : $page;
+        $offset = ($page - 1) * $pageSize;
+
+        return $this -> _db -> order($data) -> limit($offset,$pageSize) -> select();
+    }
+
+    public function getInvitationCount(){
+        return $this -> _db -> count('id');
+    }
 }
