@@ -8,7 +8,7 @@
     <meta name="description" content="糖果屋,您购物的一站式天堂">
     <link rel="stylesheet" href="/tangguowu/Public/Css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="/tangguowu/Public/Admin/Css/login.css" type="text/css">
-    <script src="/tangguowu/Public/Js/jquery.js"></script>
+    <script src="/tangguowu/Public/Js/jquery.min.js"></script>
     <script src="/tangguowu/Public/Js/layer/layer.js"></script>
     <script src="/tangguowu/Public/Js/dialog.js"></script>
     <script src="/tangguowu/Public/Admin/Js/login.js"></script>

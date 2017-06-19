@@ -136,3 +136,18 @@ $('.singcms-table #singcms-on-off').on('click', function(){
 
 });
 
+/*
+$('.search #singcms-search').on('click',function () {
+    var code = $('#search').val();
+    var data = {};
+    data['invitationCode'] = code;
+    console.log(data);
+    $.post(url,data,function (result) {
+        if(result.status == 0){
+            return dialog.error(result.message);
+        }else {
+            return dialog.success(result.message,result['data']['jump_url']);
+        }
+    },'json');
+});
+*/

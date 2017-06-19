@@ -32,18 +32,6 @@
                 </button>
             </div>
             <div class="row">
-                <form method="get" action="{:U('search')}">
-                    <div class="col-md-3">
-                        <div class="input-group search">
-                            <input class="form-control" name="code" id="search" type="text" value="" placeholder="邀请码"/>
-                            <span class="input-group-btn">
-                                <button id="singcms-search" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i></button>
-                            </span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="row">
                 <div class="col-lg-6">
                     <h3></h3>
                     <div class="table-responsive">
@@ -62,30 +50,23 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <volist name="invitations" id="invitation">
-                                    <tr>
-                                        <td>{$invitation.id}</td>
-                                        <td>{$invitation.userid}</td>
-                                        <td>{$invitation.nickname}</td>
-                                        <td>{$invitation.invitationcode}</td>
-                                        <td>{$invitation.invitationutime}</td>
-                                        <td>{$invitation.invitationctime}</td>
-                                        <td>{$invitation.invitationetime}</td>
-                                        <td>
-                                            <a href="javascript:void(0)" attr-id="{$invitation.id}" id="singcms-delete"
-                                               attr-a="invitation" attr-message="删除"><span
-                                                    class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
-                                        </td>
-                                    </tr>
-                                </volist>
+                                <tr>
+                                    <td>{$invitation.id}</td>
+                                    <td>{$invitation.userid}</td>
+                                    <td>{$invitation.nickname}</td>
+                                    <td>{$invitation.invitationcode}</td>
+                                    <td>{$invitation.invitationutime}</td>
+                                    <td>{$invitation.invitationctime}</td>
+                                    <td>{$invitation.invitationetime}</td>
+                                    <td>
+                                        <a href="javascript:void(0)" attr-id="{$invitation.id}" id="singcms-delete"
+                                           attr-a="invitation" attr-message="删除"><span
+                                                class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                         </form>
-                        <nav class="pagination">
-                            <ul>
-                                {$page}
-                            </ul>
-                        </nav>
                     </div>
                 </div>
 
@@ -104,7 +85,6 @@
     var SCOPE = {
         'add_url': '{:U("add")}',
         'delete_url': '{:U("delete")}',
-        'search_url': '{:U("search")}',
     }
 </script>
 

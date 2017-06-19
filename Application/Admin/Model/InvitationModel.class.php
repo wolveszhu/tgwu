@@ -37,4 +37,19 @@ class InvitationModel extends Model {
     public function getInvitationCount(){
         return $this -> _db -> count('id');
     }
+
+    public function deleteInvitationById($id){
+        if(!$id || !is_numeric($id)){
+            E("ID不合法");
+        }
+        return $this -> _db -> where('id= ' . $id) -> delete();
+    }
+
+    public function getInvitationByCode($code){
+        if(!$code){
+            E("邀请码不存在");
+        }
+
+        return $this -> _db -> where('invitationCode = "' . $code . '"') -> find();
+    }
 }
