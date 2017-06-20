@@ -124,4 +124,27 @@ class CategoryController extends CommonController {
             return show(0,$exception -> getMessage());
         }
     }
+
+    public function setStatus(){
+        try{
+            if($_POST){
+                $categoryId = $_POST['id'];
+                unset($_POST['id']);
+
+                if(!$categoryId){
+                    return show(0,'ID不存在');
+                }
+
+                $res = D('Category') -> updateCategoryStatusById($categoryId,$_POST);
+                if(!$res){
+                    return show(0,'更新失败');
+                }else{
+                    return show(1,'更新成功');
+                }
+            }
+            return show(0,'没有提交任何内容');
+        }catch (Exception $exception){
+            return show(0,$exception -> getMessage());
+        }
+    }
 }

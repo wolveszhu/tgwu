@@ -68,4 +68,14 @@ class CategoryModel extends Model {
         }
         return $this -> _db -> where('id = ' . $id) -> save($data);
     }
+
+    public function updateCategoryStatusById($id,$data){
+        if(!$id || !is_numeric($id)){
+            E("ID不合法");
+        }
+        if(!$data || is_numeric($data)){
+            E("更新的数据不合法");
+        }
+        return $this -> _db -> where('id = ' . $id) -> save($data);
+    }
 }
