@@ -647,3 +647,7 @@ INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
 SQL: SHOW COLUMNS FROM `tgwu_admin` [ RunTime:0.0140s ]
 SQL: SELECT * FROM `tgwu_admin` WHERE ( adminName="admin" ) LIMIT 1   [ RunTime:0.0250s ]
 
+[ 2017-06-20T17:36:05+08:00 ] ::1 /tangguowu/admin.php/Index/index.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT DISTINCT  `wareName` FROM `tgwu_wares` GROUP BY browseTimes ORDER BY browseTimes = desc LIMIT 1  
+

@@ -6,7 +6,7 @@ class IndexController extends Controller {
         $waresCount = D('Wares') -> getWaresCount();
         $waresMaxBrowse = D('Wares') -> getMaxWaresBrowse();
         $this -> assign('waresCount',$waresCount);
-        $this -> assign('maxBrowse',$waresMaxBrowse);
+        $this -> assign('maxBrowse',$waresMaxBrowse[0]['warename']);
         $this -> display();
     }
 
