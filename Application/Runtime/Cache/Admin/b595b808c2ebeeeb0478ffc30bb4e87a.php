@@ -92,122 +92,74 @@
     </div>
 </nav>
 
-<div id="page-wrapper">
+    <div id="page-wrapper">
 
-    <div class="container-fluid">
+        <div class="container-fluid">
 
-        <!-- Page Heading -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">
-                    您好<?php echo getLoginUsername()?>!欢迎使用糖果屋内容管理平台
-                </h1>
-                <ol class="breadcrumb">
-                    <li class="active">
-                        <i class="fa fa-dashboard"></i> 平台整理指标
-                    </li>
-                </ol>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa fa-comments fa-5x"></i>
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div class="huge"></div>
-                                <div>今日登录用户数</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                        <div class="panel-footer">
-                            <span class="pull-left"></span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-                    
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        您好<?php echo getLoginUsername()?>!欢迎使用糖果屋内容管理平台
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li class="active">
+                            <i class="fa fa-dashboard"></i> 平台整理指标
+                        </li>
+                    </ol>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="panel panel-green">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa fa-tasks fa-5x"></i>
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div class="huge"></div>
-                                <div>文章数量</div>
+
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-tasks fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge"><?php echo ($waresCount); ?></div>
+                                    <div>商品数量</div>
+                                </div>
                             </div>
                         </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">查看</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
                     </div>
-                    <a href="#">
-                        <div class="panel-footer">
-                            <span class="pull-left">查看</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-                    </a>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="panel panel-yellow">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa glyphicon glyphicon-asterisk  fa-5x"></i>
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div class="huge"></div>
-                                <div>文章最大阅读数</div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa glyphicon glyphicon-asterisk  fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge"><?php echo ($maxBrowse); ?></div>
+                                    <div>商品最大浏览数</div>
+                                </div>
                             </div>
                         </div>
+                        <a target="_blank" href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left"></span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
                     </div>
-                    <a target="_blank" href="#">
-                        <div class="panel-footer">
-                            <span class="pull-left"></span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="panel panel-red">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa fa-support fa-5x"></i>
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div class="huge"></div>
-                                <div>推荐位数</div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#">
-                        <div class="panel-footer">
-                            <span class="pull-left">查看</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-                    </a>
                 </div>
             </div>
         </div>
-
-
-
 
     </div>
-
-</div>
 
 </div>
 

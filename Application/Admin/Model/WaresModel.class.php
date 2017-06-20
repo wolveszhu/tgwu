@@ -78,4 +78,8 @@ class WaresModel extends Model{
 
         return $this -> _db -> where('id=' . $id) -> save($data);
     }
+
+    public function getMaxWaresBrowse(){
+        return $this -> _db -> distinct(true) -> field('wareName') -> group('browseTimes') -> select();
+    }
 }
