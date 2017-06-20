@@ -1,5 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit();?>
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -40,7 +39,6 @@
 
 
 <body>
-
 <div id="wrapper">
 
     <!-- Navigation -->
@@ -92,7 +90,7 @@
         </ul>
     </div>
 </nav>
-
+    <script src="/tangguowu/Public/Js/kindeditor/kindeditor-all.js"></script>
     <div id="page-wrapper">
 
         <div class="container-fluid">
@@ -103,10 +101,10 @@
 
                     <ol class="breadcrumb">
                         <li>
-                            <i class="fa fa-dashboard"></i>  <a href="<?php echo U('index');?>">用户管理</a>
+                            <i class="fa fa-dashboard"></i>  <a href="<?php echo U('index');?>">分类管理</a>
                         </li>
                         <li class="active">
-                            <i class="fa fa-table"></i>用户管理
+                            <i class="fa fa-edit"></i> 用户修改
                         </li>
                     </ol>
                 </div>
@@ -115,45 +113,59 @@
 
             <div class="row">
                 <div class="col-lg-6">
-                    <h3></h3>
-                    <div class="table-responsive">
-                        <form id="singcms-listorder">
-                            <table class="table table-bordered table-hover singcms-table">
-                                <thead>
-                                <tr>
-                                    <th>编号</th>
-                                    <th>昵称</th>
-                                    <th>密码</th>
-                                    <th>头像</th>
-                                    <th>收藏商品数</th>
-                                    <th>状态</th>
-                                    <th>操作</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php if(is_array($users)): $i = 0; $__LIST__ = $users;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$user): $mod = ($i % 2 );++$i;?><tr>
-                                        <td><?php echo ($user["id"]); ?></td>
-                                        <td><?php echo ($user["nickname"]); ?></td>
-                                        <td attr-id="<?php echo ($user["id"]); ?>" class="sing_cursor singcms-on-modify" id="singcms-on-modify"><?php echo ($user["password"]); ?></td>
-                                        <td><?php echo ($user["userphoto"]); ?></td>
-                                        <td><?php echo ($user["usercollnum"]); ?></td>
-                                        <td><span  attr-status="<?php if($user['status'] == 1): ?>0<?php else: ?>1<?php endif; ?>"  attr-id="<?php echo ($user["id"]); ?>" class="sing_cursor singcms-on-off" id="singcms-on-off"><?php echo (status($user["status"])); ?></span></td>
-                                        <td>
-                                            <a href="javascript:void(0)" attr-id="<?php echo ($user["id"]); ?>" id="singcms-delete"  attr-a="carousel" attr-message="删除"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
-                                            &nbsp;&nbsp;<a href="javascript:void(0)" attr-id="<?php echo ($user["id"]); ?>" id="singcms-edit"  attr-a="carousel" attr-message="修改"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
-                                        </td>
-                                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-                                </tbody>
-                            </table>
-                        </form>
-                        <nav class="pagination">
-                            <ul><?php echo ($page); ?></ul>
-                        </nav>
-                    </div>
+
+                    <form class="form-horizontal" id="singcms-form">
+                        <div class="form-group">
+                            <label for="userName" class="col-sm-2 control-label">昵称:</label>
+                            <div class="col-sm-9">
+                                <input value="<?php echo ($user["nickname"]); ?>" type="text" class="form-control" name="nickName" id="userName" placeholder="名称">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd" class="col-sm-2 control-label">密码:</label>
+                            <div class="col-sm-9">
+                                <input value="<?php echo ($user["password"]); ?>" type="password" class="form-control" name="password" id="pwd" placeholder="密码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">头像:</label>
+                            <div class="col-sm-5">
+                                <input id="file_upload"  type="file" multiple="true" name="userPhoto">
+                                <img style="display: none" id="upload_org_code_img" src="<?php echo ($user["userphoto"]); ?>" width="150" height="150">
+                                <input id="file_upload_image" name="userPhoto" type="hidden" multiple="true" value="<?php echo ($user["userphoto"]); ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="usercollnum" class="col-sm-2 control-label">收藏商品数:</label>
+                            <div class="col-sm-9">
+                                <input value="<?php echo ($user["usercollnum"]); ?>" type="number" class="form-control" name="userCollNum" id="usercollnum" placeholder="收藏商品">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">状态:</label>
+                            <div class="col-sm-5">
+                                <select class="form-control" name="status">
+                                    <option value="0">==请选择状态==</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                </select>
+                            </div>
+                        </div>
+                        <input type="hidden" name="id" value="<?php echo ($user["id"]); ?>"/>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="button" class="btn btn-default" id="singcms-button-submit">提交</button>
+                            </div>
+                        </div>
+                    </form>
+
+
                 </div>
 
             </div>
             <!-- /.row -->
+
         </div>
         <!-- /.container-fluid -->
 
@@ -161,17 +173,24 @@
     <!-- /#page-wrapper -->
 
 </div>
-<!-- /#wrapper -->
-<!-- Morris Charts JavaScript -->
 <script>
     var SCOPE = {
-        'edit_url' : '<?php echo U("edit");?>',
-        'delete_url': '<?php echo U("delete");?>',
-        'set_status_url' : '<?php echo U("setStatus");?>',
-        'listorder_url' :'<?php echo U("listorder");?>',
+        'save_url' : '<?php echo U("update");?>',
+        'jump_url' : '<?php echo U("index");?>',
+        'ajax_upload_image_url' : '<?php echo U("Image/ajaxuploadimage");?>',
+        'ajax_upload_swf' : '/tangguowu/Public/Js/uploadify/uploadify.swf',
+        'root' : '/tangguowu',
+    };
+
+</script>
+<!-- /#wrapper -->
+<script src="/tangguowu/Public/Admin/Js/image.js"></script>
+<script>
+    var thumb = "<?php echo ($news["thumb"]); ?>";
+    if(thumb) {
+        $("#upload_org_code_img").show();
     }
 </script>
-
 <script src="/tangguowu/Public/Admin/Js/common.js"></script>
 
 

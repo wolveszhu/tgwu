@@ -458,3 +458,192 @@ SQL: UPDATE `tgwu_wares` SET `wareSort`='0' WHERE ( id=3 ) [ RunTime:0.0500s ]
 SQL: UPDATE `tgwu_wares` SET `wareSort`='0' WHERE ( id=4 ) [ RunTime:0.0450s ]
 SQL: UPDATE `tgwu_wares` SET `wareSort`='42' WHERE ( id=5 ) [ RunTime:0.0420s ]
 
+[ 2017-06-20T14:16:54+08:00 ] ::1 /tangguowu/admin.php/User/index.html
+ERR: Think\Model:getUserPage方法不存在！
+
+[ 2017-06-20T14:17:02+08:00 ] ::1 /tangguowu/admin.php/User/index.html
+ERR: Think\Model:getUserPage方法不存在！
+
+[ 2017-06-20T14:33:41+08:00 ] ::1 /tangguowu/admin.php/User/setStatus.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_user` [ RunTime:0.0040s ]
+SQL: UPDATE `tgwu_user` SET `status`='0' WHERE ( id = 6 ) [ RunTime:0.0870s ]
+
+[ 2017-06-20T14:35:42+08:00 ] ::1 /tangguowu/admin.php/User/delete.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `tgwu_user` [ RunTime:0.0090s ]
+SQL: DELETE FROM `tgwu_user` WHERE ( id = 5 ) [ RunTime:0.0600s ]
+
+[ 2017-06-20T14:44:44+08:00 ] ::1 /tangguowu/admin.php/User/add.html?id=11
+ERR: 非法操作:add
+
+[ 2017-06-20T14:54:08+08:00 ] ::1 /tangguowu/admin.php/User/add.html?id=11
+ERR: 非法操作:add
+
+[ 2017-06-20T14:54:34+08:00 ] ::1 /tangguowu/admin.php/User/edit.html?id=11
+ERR: Think\Model:getUserById方法不存在！
+
+[ 2017-06-20T14:56:58+08:00 ] ::1 /tangguowu/admin.php/User/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+ERR: 非法操作:add
+
+[ 2017-06-20T14:57:22+08:00 ] ::1 /tangguowu/admin.php/User/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:add
+
+[ 2017-06-20T14:58:52+08:00 ] ::1 /tangguowu/admin.php/Wares/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-20T15:13:53+08:00 ] ::1 /tangguowu/admin.php/User/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_user` [ RunTime:0.0040s ]
+SQL: UPDATE `tgwu_user` SET `nickName`='zhulllllll',`password`='37e48a6c034fcbf31e0fd90f1ab2946c',`userPhoto`='/upload/2017/06/20/5948cb28503cf.png',`userCollNum`='22',`status`='1' WHERE ( id=2 ) [ RunTime:0.0430s ]
+
+[ 2017-06-20T15:15:19+08:00 ] ::1 /tangguowu/admin.php/User/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_user` [ RunTime:0.0050s ]
+SQL: UPDATE `tgwu_user` SET `nickName`='zhu',`password`='jjjjjjjjj',`userPhoto`='/upload/2017/06/20/5948cb28503cf.png',`userCollNum`='22',`status`='1' WHERE ( id=2 ) [ RunTime:0.0460s ]
+
+[ 2017-06-20T15:17:26+08:00 ] ::1 /tangguowu/admin.php/User/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_user` [ RunTime:0.0090s ]
+SQL: UPDATE `tgwu_user` SET `nickName`='zhu',`password`='87ddf0b180c4e6a3037699b999224bfe',`userPhoto`='/upload/2017/06/20/5948cb28503cf.png',`userCollNum`='22',`status`='1' WHERE ( id=2 ) [ RunTime:0.0300s ]
+
+[ 2017-06-20T15:17:50+08:00 ] ::1 /tangguowu/admin.php/User/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_user` [ RunTime:0.0050s ]
+SQL: UPDATE `tgwu_user` SET `nickName`='zhu',`password`='46be3e34414eb0b8e7e90d57c484a0db',`userPhoto`='/upload/2017/06/20/5948cb28503cf.png',`userCollNum`='26',`status`='1' WHERE ( id=2 ) [ RunTime:0.0400s ]
+
+[ 2017-06-20T15:19:12+08:00 ] ::1 /tangguowu/admin.php/User/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_user` [ RunTime:0.0040s ]
+SQL: UPDATE `tgwu_user` SET `nickName`='zhu',`password`='b00a78cd11cda8a12c964f072cda32c9',`userPhoto`='/upload/2017/06/20/5948cb28503cf.png',`userCollNum`='25',`status`='1' WHERE ( id=2 ) [ RunTime:0.0310s ]
+
+[ 2017-06-20T15:21:43+08:00 ] ::1 /tangguowu/admin.php/User/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_user` [ RunTime:0.0170s ]
+SQL: UPDATE `tgwu_user` SET `nickName`='zhu',`password`='b00a78cd11cda8a12c964f072cda32c9',`userPhoto`='/upload/2017/06/20/5948cb28503cf.png',`userCollNum`='26',`status`='1' WHERE ( id=2 ) [ RunTime:0.0310s ]
+
+[ 2017-06-20T15:21:54+08:00 ] ::1 /tangguowu/admin.php/User/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-20T15:21:58+08:00 ] ::1 /tangguowu/admin.php/User/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_user` [ RunTime:0.0040s ]
+SQL: UPDATE `tgwu_user` SET `nickName`='zhu',`password`='b00a78cd11cda8a12c964f072cda32c9',`userPhoto`='/upload/2017/06/20/5948cb28503cf.png',`userCollNum`='27',`status`='1' WHERE ( id=2 ) [ RunTime:0.0470s ]
+
+[ 2017-06-20T15:23:13+08:00 ] ::1 /tangguowu/admin.php/User/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-20T15:23:29+08:00 ] ::1 /tangguowu/admin.php/User/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-20T15:25:37+08:00 ] ::1 /tangguowu/admin.php/User/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_user` [ RunTime:0.0050s ]
+SQL: UPDATE `tgwu_user` SET `nickName`='zhu',`password`='5fbb166e0c5105f43f2f35dc7f52868a',`userPhoto`='/upload/2017/06/20/5948cb28503cf.png',`userCollNum`='26',`status`='1' WHERE ( id=2 ) [ RunTime:0.0460s ]
+
+[ 2017-06-20T15:32:10+08:00 ] ::1 /tangguowu/admin.php/User/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_user` [ RunTime:0.0170s ]
+SQL: UPDATE `tgwu_user` SET `nickName`='zhu',`password`='5fbb166e0c5105f43f2f35dc7f52868a',`userPhoto`='/upload/2017/06/20/5948cb28503cf.png',`userCollNum`='27',`status`='1' WHERE ( id=2 ) [ RunTime:0.0470s ]
+
+[ 2017-06-20T15:32:21+08:00 ] ::1 /tangguowu/admin.php/User/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_user` [ RunTime:0.0040s ]
+SQL: UPDATE `tgwu_user` SET `nickName`='zhu',`password`='5fbb166e0c5105f43f2f35dc7f52868a',`userPhoto`='/upload/2017/06/20/5948cb28503cf.png',`userCollNum`='24',`status`='1' WHERE ( id=2 ) [ RunTime:0.0340s ]
+
+[ 2017-06-20T15:42:37+08:00 ] ::1 /tangguowu/admin.php/User/setStatus.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `tgwu_user` [ RunTime:0.0040s ]
+SQL: UPDATE `tgwu_user` SET `status`='0' WHERE ( id = 10 ) [ RunTime:0.0470s ]
+
+[ 2017-06-20T15:52:08+08:00 ] ::1 /tangguowu/admin.php/User/modifyPassword.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_user` [ RunTime:0.0150s ]
+ERR: 1265:Data truncated for column 'status' at row 1
+ [ SQL语句 ] : UPDATE `tgwu_user` SET `status`='' WHERE ( id = 11 )
+ERR: 1265:Data truncated for column 'status' at row 1
+ [ SQL语句 ] : UPDATE `tgwu_user` SET `status`='' WHERE ( id = 11 )
+
+[ 2017-06-20T16:15:57+08:00 ] ::1 /tangguowu/admin.php/User/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-20T16:16:57+08:00 ] ::1 /tangguowu/admin.php/User/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-20T16:17:30+08:00 ] ::1 /tangguowu/admin.php/User/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_user` [ RunTime:0.0080s ]
+SQL: SELECT `password` FROM `tgwu_user` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0340s ]
+SQL: UPDATE `tgwu_user` SET `nickName`='zhu',`password`='5fbb166e0c5105f43f2f35dc7f52868a',`userPhoto`='/upload/2017/06/20/5948cb28503cf.png',`userCollNum`='18',`status`='1' WHERE ( id=2 ) [ RunTime:0.0950s ]
+
+[ 2017-06-20T16:17:41+08:00 ] ::1 /tangguowu/admin.php/User/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_user` [ RunTime:0.0230s ]
+SQL: SELECT `password` FROM `tgwu_user` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `tgwu_user` SET `nickName`='zhu',`password`='5fbb166e0c5105f43f2f35dc7f52868a',`userPhoto`='/upload/2017/06/20/5948cb28503cf.png',`userCollNum`='19',`status`='1' WHERE ( id=2 ) [ RunTime:0.0370s ]
+
+[ 2017-06-20T16:17:52+08:00 ] ::1 /tangguowu/admin.php/User/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_user` [ RunTime:0.0080s ]
+SQL: SELECT `password` FROM `tgwu_user` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `tgwu_user` SET `nickName`='zhu',`password`='b7018063c2571fe36bdeaa446e80aa16',`userPhoto`='/upload/2017/06/20/5948cb28503cf.png',`userCollNum`='19',`status`='1' WHERE ( id=2 ) [ RunTime:0.0400s ]
+
+[ 2017-06-20T16:33:07+08:00 ] ::1 /tangguowu/admin.php/Login/check
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_admin` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `tgwu_admin` WHERE ( adminName="admin" ) LIMIT 1   [ RunTime:0.0250s ]
+

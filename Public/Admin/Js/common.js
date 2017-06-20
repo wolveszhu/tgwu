@@ -136,6 +136,8 @@ $('.singcms-table #singcms-on-off').on('click', function(){
 
 });
 
+
+
 /*
 $('.search #singcms-search').on('click',function () {
     var code = $('#search').val();
