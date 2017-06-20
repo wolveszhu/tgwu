@@ -69,4 +69,13 @@ class WaresModel extends Model{
 
         return $this -> _db -> where('id=' . $id) -> save($data);
     }
+
+    public function updateWareSortById($id,$wareSort){
+        if(!$id || !is_numeric($id)){
+            E('ID不合法');
+        }
+        $data = array('wareSort' => intval($wareSort));
+
+        return $this -> _db -> where('id=' . $id) -> save($data);
+    }
 }

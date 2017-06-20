@@ -142,6 +142,30 @@ class WaresController extends CommonController {
             return show(0,$exception -> getMessage());
         }
     }
+
+    public function listorder(){
+        $wareSort = $_POST['waresort'];
+        $jumpUrl = $_SERVER['HTTP_REFERER'];
+        $errors = [];
+
+        try{
+            if($wareSort){
+                foreach ($wareSort as $item => $value){
+                    $id = D('Wares') -> updateWareSortById($item,$value);
+                    if($id === false){
+                        $errors[] = $item;
+                    }
+                }
+                if($errors){
+                    return show(0,'排序失败',array('jump_url' => $jumpUrl));
+                }
+                return show(1,'排序成功',array('jump_url' => $jumpUrl));
+            }
+        }catch (Exception $exception){
+            return show(0,$exception -> getMessage());
+        }
+        return show(0,'数据排序失败',array('jump_url' => $jumpUrl));
+    }
 }
 
 
