@@ -1,9 +1,96 @@
-<include file="Index/header" />
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>糖果屋后台管理平台</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="/tangguowu/Public/Css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/tangguowu/Public/Admin/Css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="/tangguowu/Public/Css/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/tangguowu/Public/Css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/tangguowu/Public/Admin/Css/common.css" />
+    <link rel="stylesheet" href="/tangguowu/Public/Css/bootstrap-switch.css" />
+    <link rel="stylesheet" type="text/css" href="/tangguowu/Public/Css/uploadify/uploadify.css">
+
+    <!-- jQuery -->
+    <script src="/tangguowu/Public/Js/jquery.min.js"></script>
+    <script src="/tangguowu/Public/Js/bootstrap.min.js"></script>
+    <script src="/tangguowu/Public/Js/layer/layer.js"></script>
+    <script src="/tangguowu/Public/Js/dialog.js"></script>
+    <script type="text/javascript" src="/tangguowu/Public/Js/uploadify/jquery.uploadify.js"></script>
+
+</head>
+
+    
+
+
+
 <body>
 <div id="wrapper">
 
-    <include file="Index/nav"/>
-    <script src="__PUBLIC__/Js/kindeditor/kindeditor-all.js"></script>
+    <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+
+        <a class="navbar-brand">糖果屋内容管理平台</a>
+    </div>
+    <!-- Top Menu Items -->
+    <ul class="nav navbar-right top-nav">
+
+
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="<?php echo U('Admin/personal');?>"><i class="fa fa-fw fa-user"></i> 个人中心</a>
+                </li>
+
+                <li class="divider"></li>
+                <li>
+                    <a href="<?php echo U('Login/logout');?>"><i class="fa fa-fw fa-power-off"></i> 退出</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav side-nav nav_list">
+            <li>
+                <a href="<?php echo U('Index/index');?>"><i class="fa fa-fw fa-dashboard"></i>  首页</a>
+            </li>
+            <li>
+                <a href="<?php echo U('Carousel/index');?>"><i class="fa fa-fw fa-bar-chart-o"></i>  轮播图管理</a>
+            </li>
+            <li>
+                <a href="<?php echo U('Invitation/index');?>"><i class="fa fa-fw fa-bar-chart-o"></i>  邀请码管理</a>
+            </li>
+            <li>
+                <a href="<?php echo U('Category/index');?>"><i class="fa fa-fw fa-bar-chart-o"></i>  分类管理</a>
+            </li>
+            <li>
+                <a href="<?php echo U('Wares/index');?>"><i class="fa fa-fw fa-bar-chart-o"></i>  商品管理</a>
+            </li>
+            <li>
+                <a href="<?php echo U('User/index');?>"><i class="fa fa-fw fa-bar-chart-o"></i>  用户管理</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+    <script src="/tangguowu/Public/Js/kindeditor/kindeditor-all.js"></script>
     <div id="page-wrapper">
 
         <div class="container-fluid">
@@ -14,7 +101,7 @@
 
                     <ol class="breadcrumb">
                         <li>
-                            <i class="fa fa-dashboard"></i>  <a href="{:U('index')}">商品管理</a>
+                            <i class="fa fa-dashboard"></i>  <a href="<?php echo U('index');?>">商品管理</a>
                         </li>
                         <li class="active">
                             <i class="fa fa-edit"></i> 商品添加
@@ -42,9 +129,7 @@
                                     <option value="0">==请选择分类==</option>
                                     <option value="0">0</option>
                                     <option value="1">1</option>
-                                    <foreach name="titleFontColor" item="color">
-                                        <option value=""></option>
-                                    </foreach>
+                                    <?php if(is_array($titleFontColor)): foreach($titleFontColor as $key=>$color): ?><option value=""></option><?php endforeach; endif; ?>
                                 </select>
                             </div>
                         </div>
@@ -177,23 +262,31 @@
 </div>
 <script>
     var SCOPE = {
-        'save_url' : '{:U("add")}',
-        'jump_url' : '{:U("index")}',
-        'ajax_upload_image_url' : '{:U("Image/ajaxuploadimage")}',
-        'ajax_upload_swf' : '__PUBLIC__/Js/uploadify/uploadify.swf',
-        'root' : '__ROOT__',
+        'save_url' : '<?php echo U("add");?>',
+        'jump_url' : '<?php echo U("index");?>',
+        'ajax_upload_image_url' : '<?php echo U("Image/ajaxuploadimage");?>',
+        'ajax_upload_swf' : '/tangguowu/Public/Js/uploadify/uploadify.swf',
+        'root' : '/tangguowu',
     };
 
 </script>
 <!-- /#wrapper -->
-<script src="__PUBLIC__/Admin/Js/image.js"></script>
+<script src="/tangguowu/Public/Admin/Js/image.js"></script>
 <script>
     // 6.2
     KindEditor.ready(function(K) {
         window.editor = K.create('#editor_singcms',{
+            allowImageUpload :false,
+            allowImageRemote : false,
             uploadJson : '',
             afterBlur : function(){this.sync();}, //
         });
     });
 </script>
-<include file="Index/footer" />
+<script src="/tangguowu/Public/Admin/Js/common.js"></script>
+
+
+
+</body>
+
+</html>
