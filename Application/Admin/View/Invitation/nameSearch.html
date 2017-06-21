@@ -32,28 +32,6 @@
                 </button>
             </div>
             <div class="row">
-                <form action="{:U('search')}" method="get">
-                    <div class="col-md-2">
-                        <div class="input-group search">
-                            <input class="form-control" name="code" id="code" type="text" value="" placeholder="邀请码"/>
-                            <span class="input-group-btn">
-                                <button id="singcms-search" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i></button>
-                            </span>
-                        </div>
-                    </div>
-                </form>
-                <form action="{:U('nameSearch')}" method="get">
-                    <div class="col-md-2">
-                        <div class="input-group search">
-                            <input class="form-control" name="invitationName" id="nameSearch" type="text" value="" placeholder="用户昵称"/>
-                            <span class="input-group-btn">
-                                <button id="name-search" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i></button>
-                            </span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="row">
                 <div class="col-lg-6">
                     <h3></h3>
                     <div class="table-responsive">
@@ -90,12 +68,8 @@
                                 </volist>
                                 </tbody>
                             </table>
+                            </table>
                         </form>
-                        <nav class="pagination">
-                            <ul>
-                                {$page}
-                            </ul>
-                        </nav>
                     </div>
                 </div>
 
@@ -114,8 +88,6 @@
     var SCOPE = {
         'add_url': '{:U("add")}',
         'delete_url': '{:U("delete")}',
-        'search_url': '{:U("search")}',
-        'namesearch_url' : '{:U("nameSearch")}',
     }
 </script>
 

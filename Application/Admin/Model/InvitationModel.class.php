@@ -46,10 +46,13 @@ class InvitationModel extends Model {
     }
 
     public function getInvitationByCode($code){
-        if(!$code){
-            E("邀请码不存在");
-        }
-
+//        $data['invitationCode'] = array('like',"%{$code}%");
         return $this -> _db -> where('invitationCode = "' . $code . '"') -> find();
+//        return $this -> _db -> where($data) -> select();
+    }
+
+    public function getInvitationByName($name){
+        $data['nickName'] = array('like',"%{$name}%");
+        return $this -> _db -> where($data) -> select();
     }
 }

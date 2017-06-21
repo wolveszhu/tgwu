@@ -29,19 +29,18 @@ class InvitationController extends CommonController {
     }
 
     public function search(){
-        $invitationId = $_GET['Code'];
-//        $this -> assign('inv',$invitationId);
-        $res = D('Invitation') -> getInvitationByCode($invitationId);
-        $jump_url = '{:U("search")}';
+        $code = trim($_GET['code']);
+        if(!$code){
+            $this -> redirect('index');
+        }
+        $res = D('Invitation') -> getInvitationByCode($code);
         if(!$res){
-            return show(0,'用户不存在');
+            $this -> redirect('index');
         }else{
             $this -> assign('invitation',$res);
             $this -> display();
-            return show(1,'查找成功',array('jump_url' => $jump_url));
         }
     }
-
     public function delete(){
         try{
             if($_POST){
@@ -60,6 +59,20 @@ class InvitationController extends CommonController {
             return show(0,"没有提交任何内容");
         }catch (Exception $exception){
             return show(0,$exception -> getMessage());
+        }
+    }
+
+    public function nameSearch(){
+        $name = trim($_GET['invitationName']);
+        if(!$name){
+            $this -> redirect('index');
+        }
+        $res = D('Invitation') -> getInvitationByName($name);
+        if(!$res){
+            $this -> redirect('index');
+        }else{
+            $this -> assign('invitations',$res);
+            $this -> display();
         }
     }
 }
