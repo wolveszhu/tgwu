@@ -12,7 +12,6 @@ use Think\Controller;
 class LoginController extends Controller{
     public function index(){
         if(session('adminUser')) {
-//            $this -> redirect('admin.php?c=Index&a=index');
             $this -> redirect('Index/index');
         }
         $this -> display();

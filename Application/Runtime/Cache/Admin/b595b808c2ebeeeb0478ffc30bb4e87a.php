@@ -143,7 +143,7 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge"><?php echo ($maxBrowse); ?></div>
-                                    <div>商品最大浏览数</div>
+                                    <div>最大浏览数商品</div>
                                 </div>
                             </div>
                         </div>
