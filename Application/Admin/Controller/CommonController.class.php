@@ -19,7 +19,7 @@ class CommonController extends Controller{
         $isLogin = $this -> isLogin();
 
         if(!$isLogin){
-            $this -> redirect('admin.php?c=Login&a=index');
+            $this -> redirect('Login/logout');
         }
     }
 
