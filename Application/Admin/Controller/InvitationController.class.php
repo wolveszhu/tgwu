@@ -75,4 +75,28 @@ class InvitationController extends CommonController {
             $this -> display();
         }
     }
+
+    public function save(){
+        if($_POST){
+            $num = $_POST['inviNum'];
+            $termOfValidity = $_POST['termOfValidity'];
+            if(!$num){
+                return show(0,"生成数量没有填入");
+            }
+            if(!$termOfValidity){
+                return show(0,"有效期没有选择");
+            }
+            $inviCodes = $this -> getInviCodes($num);
+
+        }
+        return show(0,"没有提交任何数据");
+    }
+
+    /**
+     * @param int $num 生成邀请码的数量
+     * @return array $codes 返回生成的邀请码和创建时间的二维数组
+     */
+    public function getInviCodes($num){
+
+    }
 }
