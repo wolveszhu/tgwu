@@ -103,10 +103,10 @@
 
                     <ol class="breadcrumb">
                         <li>
-                            <i class="fa fa-dashboard"></i>  <a href="#">分类管理</a>
+                            <i class="fa fa-dashboard"></i>  <a href="#">商品管理</a>
                         </li>
                         <li class="active">
-                            <i class="fa fa-table"></i>分类管理
+                            <i class="fa fa-table"></i>商品管理
                         </li>
                     </ol>
                 </div>

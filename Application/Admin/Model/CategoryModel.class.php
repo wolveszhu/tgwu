@@ -78,4 +78,8 @@ class CategoryModel extends Model {
         }
         return $this -> _db -> where('id = ' . $id) -> save($data);
     }
+
+    public function getCategorysName(){
+        return $this -> _db -> field('id,categoryName') -> select();
+    }
 }

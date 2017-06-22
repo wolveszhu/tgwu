@@ -39,11 +39,9 @@
                             <label class="col-sm-2 control-label">商品分类:</label>
                             <div class="col-sm-5">
                                 <select class="form-control" name="categoryId">
-                                    <option value="0">==请选择分类==</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <foreach name="titleFontColor" item="color">
-                                        <option value=""></option>
+                                    <option>==请选择分类==</option>
+                                    <foreach name="categorys" item="category">
+                                        <option value="{$category.id}">{$category.categoryname}</option>
                                     </foreach>
                                 </select>
                             </div>
@@ -85,9 +83,9 @@
                             <label class="col-sm-2 control-label">商品状态:</label>
                             <div class="col-sm-5">
                                 <select class="form-control" name="status">
-                                    <option value="0">==请选择状态==</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
+                                    <option>==请选择状态==</option>
+                                    <option value="-1" <if condition="$ware.status neq 1">selected="selected"</if>>不上架</option>
+                                    <option value="1" <if condition="$ware.status eq 1">selected="selected"</if>>上架</option>
                                 </select>
                             </div>
                         </div>
@@ -137,16 +135,16 @@
                         <div class="form-group">
                             <label for="isnew" class="col-sm-2 control-label">是否新品:</label>
                             <div class="col-sm-5">
-                                <input type="radio" name="isNew" id="isnew" value="1"> 是
-                                <input type="radio" name="isNew" id="isnew" value="0" checked> 否
+                                <input type="radio" name="isNew" id="isnew" value="1" <if condition="$ware.ishot eq 1">checked</if>> 是
+                                <input type="radio" name="isNew" id="isnew" value="-1" <if condition="$ware.ishot eq -1">checked</if>> 否
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="ishot" class="col-sm-2 control-label">是否热卖:</label>
                             <div class="col-sm-5">
-                                <input type="radio" name="isHot" id="ishot" value="1"> 是
-                                <input type="radio" name="isHot" id="ishot" value="0" checked> 否
+                                <input type="radio" name="isHot" id="ishot" value="1" <if condition="$ware.ishot eq 1">checked</if>> 是
+                                <input type="radio" name="isHot" id="ishot" value="-1" <if condition="$ware.ishot eq -1">checked</if>> 否
                             </div>
                         </div>
 

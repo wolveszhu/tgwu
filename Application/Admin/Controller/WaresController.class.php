@@ -66,6 +66,8 @@ class WaresController extends CommonController {
                 return show(0,'新增失败');
             }
         } else {
+            $categorys = D('Category') -> getCategorysName();
+            $this -> assign('categorys',$categorys);
             $this -> display();
         }
     }
@@ -81,7 +83,8 @@ class WaresController extends CommonController {
         if(!$ware){
             $this -> redirect('index');
         }
-
+        $categorys = D('Category') -> getCategorysName();
+        $this -> assign('categorys',$categorys);
         $this -> assign('ware',$ware);
         $this -> display();
     }

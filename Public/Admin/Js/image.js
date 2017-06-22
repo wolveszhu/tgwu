@@ -35,6 +35,7 @@ $(function() {
         'fileObjName' : 'file',
         //允许上传的文件后缀
         'fileTypeExts': '*.gif; *.jpg; *.png',
+        'uploadLimit':5,
         'onUploadSuccess' : function(file,data,response) {
             // response true ,false
             if(response) {
@@ -42,10 +43,14 @@ $(function() {
 
                 $('#' + file.id).find('.data').html(' 上传完毕');
 
+                var image_data = $("#file_upload_images").val();
+                image_data = image_data+";"+obj.data+";";
+                // console.log(image_data);
                 obj.newdata = SCOPE.root + obj.data;
-                $("#upload_org_code_imgs").attr("src",obj.newdata);
+
+                // $("#upload_org_code_imgs").attr("src",obj.newdata);
                 $("#file_upload_images").attr('value',obj.data);
-                $("#upload_org_code_imgs").show();
+                // $("#upload_org_code_imgs").show();
             }else{
                 alert('上传失败');
             }
