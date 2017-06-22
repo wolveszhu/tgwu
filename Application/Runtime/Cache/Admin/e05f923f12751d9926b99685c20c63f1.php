@@ -158,10 +158,10 @@
                                         <td><?php echo ($ware["colltimes"]); ?></td>
                                         <td><?php echo ($ware["browsetimes"]); ?></td>
                                         <td><?php echo ($ware["inventory"]); ?></td>
-                                        <td><?php echo ($ware["discount"]); ?></td>
-                                        <td><?php echo ($ware["cutprice"]); ?></td>
-                                        <td><?php echo ($ware["isnew"]); ?></td>
-                                        <td><?php echo ($ware["ishot"]); ?></td>
+                                        <td><?php echo (isreduce($ware["discount"])); ?></td>
+                                        <td><?php echo (isreduce($ware["cutprice"])); ?></td>
+                                        <td><?php echo (ishotnew($ware["isnew"])); ?></td>
+                                        <td><?php echo (ishotnew($ware["ishot"])); ?></td>
                                         <td><span  attr-status="<?php if($ware['status'] == 1): ?>0<?php else: ?>1<?php endif; ?>"  attr-id="<?php echo ($ware["id"]); ?>" class="sing_cursor singcms-on-off" id="singcms-on-off"><?php echo (status($ware["status"])); ?></span></td>
                                         <td>
                                             <a href="javascript:void(0)" attr-id="<?php echo ($ware["id"]); ?>" id="singcms-delete"  attr-a="carousel" attr-message="删除"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>

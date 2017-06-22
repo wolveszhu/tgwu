@@ -31,6 +31,24 @@ function status($status) {
     return $str;
 }
 
+function ishotnew($status){
+    if($status == 1){
+        $str = "是";
+    }else{
+        $str = "否";
+    }
+    return $str;
+}
+
+function isreduce($status){
+    if($status == -1){
+        $str = "否";
+    }else{
+        $str = "是";
+    }
+    return $str;
+}
+
 function isCarousel($carousel) {
     if($carousel) {
         return '<span style="color:red">有</span>';

@@ -146,3 +146,10 @@ INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
 SQL: SHOW COLUMNS FROM `tgwu_wares` [ RunTime:0.0070s ]
 SQL: UPDATE `tgwu_wares` SET `status`='0' WHERE ( id=15 ) [ RunTime:0.0460s ]
 
+[ 2017-06-22T15:03:41+08:00 ] ::1 /tangguowu/admin.php/Wares/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_wares` [ RunTime:0.0080s ]
+SQL: UPDATE `tgwu_wares` SET `wareName`='柔柔弱弱',`categoryId`='1',`wareCover`='/upload/2017/06/22/594b31851ce80.png',`wareMstChart`='/upload/2017/06/22/594b318d2aef4.png',`wareDesc`='发是非得失',`warePrice`='23',`status`='1',`wareCode`='2324423',`collTimes`='34',`browseTimes`='45',`inventory`='432',`discount`='-1',`cutPrice`='-1',`isNew`='-1',`isHot`='-1' WHERE ( id=11 ) [ RunTime:0.0330s ]
+

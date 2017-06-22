@@ -72,10 +72,10 @@
                                         <td>{$ware.colltimes}</td>
                                         <td>{$ware.browsetimes}</td>
                                         <td>{$ware.inventory}</td>
-                                        <td>{$ware.discount}</td>
-                                        <td>{$ware.cutprice}</td>
-                                        <td>{$ware.isnew}</td>
-                                        <td>{$ware.ishot}</td>
+                                        <td>{$ware.discount|isreduce}</td>
+                                        <td>{$ware.cutprice|isreduce}</td>
+                                        <td>{$ware.isnew|ishotnew}</td>
+                                        <td>{$ware.ishot|ishotnew}</td>
                                         <td><span  attr-status="<if condition="$ware['status'] eq 1">0<else/>1</if>"  attr-id="{$ware.id}" class="sing_cursor singcms-on-off" id="singcms-on-off">{$ware.status|status}</span></td>
                                         <td>
                                             <a href="javascript:void(0)" attr-id="{$ware.id}" id="singcms-delete"  attr-a="carousel" attr-message="删除"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>

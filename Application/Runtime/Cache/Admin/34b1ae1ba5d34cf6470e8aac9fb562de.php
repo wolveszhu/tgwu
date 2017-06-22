@@ -127,7 +127,7 @@
                             <div class="col-sm-5">
                                 <select class="form-control" name="categoryId">
                                     <option>==请选择分类==</option>
-                                    <?php if(is_array($categorys)): foreach($categorys as $key=>$category): ?><option value="<?php echo ($category["id"]); ?>"><?php echo ($category["categoryname"]); ?></option><?php endforeach; endif; ?>
+                                    <?php if(is_array($categorys)): foreach($categorys as $key=>$category): ?><option value="<?php echo ($category["id"]); ?>" id="<?php echo ($ware["categoryid"]); ?>" <?php if($category["id"] == $ware['categoryid']): ?>selected="selected"<?php endif; ?>><?php echo ($category["categoryname"]); ?></option><?php endforeach; endif; ?>
                                 </select>
                             </div>
                         </div>
@@ -160,7 +160,7 @@
                         <div class="form-group">
                             <label for="wareprice" class="col-sm-2 control-label">价格:</label>
                             <div class="col-sm-5">
-                                <input type="text" name="warePrice" class="form-control" value="<?php echo ($ware["wareprice"]); ?>" id="wareprice" placeholder="请填写价格">
+                                <input type="number" name="warePrice" class="form-control" value="<?php echo ($ware["wareprice"]); ?>" id="wareprice" placeholder="请填写价格">
                             </div>
                         </div>
 
@@ -185,35 +185,35 @@
                         <div class="form-group">
                             <label for="colltimes" class="col-sm-2 control-label">收藏次数:</label>
                             <div class="col-sm-5">
-                                <input type="text" name="collTimes" class="form-control" value="<?php echo ($ware["colltimes"]); ?>" id="colltimes" placeholder="收藏次数">
+                                <input type="number" name="collTimes" class="form-control" value="<?php echo ($ware["colltimes"]); ?>" id="colltimes" placeholder="收藏次数">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="browsetimes" class="col-sm-2 control-label">浏览次数:</label>
                             <div class="col-sm-5">
-                                <input type="text" name="browseTimes" class="form-control" value="<?php echo ($ware["browsetimes"]); ?>" id="browsetimes" placeholder="浏览次数">
+                                <input type="number" name="browseTimes" class="form-control" value="<?php echo ($ware["browsetimes"]); ?>" id="browsetimes" placeholder="浏览次数">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="inventory" class="col-sm-2 control-label">库存数:</label>
                             <div class="col-sm-5">
-                                <input type="text" name="inventory" class="form-control" value="<?php echo ($ware["inventory"]); ?>" id="inventory" placeholder="库存数">
+                                <input type="number" name="inventory" class="form-control" value="<?php echo ($ware["inventory"]); ?>" id="inventory" placeholder="库存数">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="discount" class="col-sm-2 control-label">折扣:</label>
                             <div class="col-sm-5">
-                                <input type="text" name="discount" class="form-control" value="<?php echo ($ware["discount"]); ?>" id="discount" placeholder="折扣（0-10）">
+                                <input type="number" name="discount" class="form-control" value="<?php echo ($ware["discount"]); ?>" id="discount" placeholder="折扣（0-10）">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="cutprice" class="col-sm-2 control-label">降价:</label>
                             <div class="col-sm-5">
-                                <input type="text" name="cutPrice" class="form-control" value="<?php echo ($ware["cutprice"]); ?>" id="cutprice" placeholder="降价">
+                                <input type="number" name="cutPrice" class="form-control" value="<?php echo ($ware["cutprice"]); ?>" id="cutprice" placeholder="降价">
                             </div>
                         </div>
 
