@@ -78,9 +78,9 @@
                                         <td>{$invitation.userid}</td>
                                         <td>{$invitation.nickname}</td>
                                         <td>{$invitation.invitationcode}</td>
-                                        <td>{$invitation.invitationutime}</td>
+                                        <td>{$invitation.invitationutime|standTime}</td>
                                         <td>{$invitation.invitationctime}</td>
-                                        <td>{$invitation.invitationetime}</td>
+                                        <td>{$invitation.invitationetime|standTime}</td>
                                         <td>
                                             <a href="javascript:void(0)" attr-id="{$invitation.id}" id="singcms-delete"
                                                attr-a="invitation" attr-message="删除"><span

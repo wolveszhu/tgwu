@@ -49,6 +49,13 @@ function isreduce($status){
     return $str;
 }
 
+function standTime($int){
+    if($int == 0){
+        return '';
+    }
+    return date('Y-m-d H:i:s',$int);
+}
+
 function isCarousel($carousel) {
     if($carousel) {
         return '<span style="color:red">有</span>';

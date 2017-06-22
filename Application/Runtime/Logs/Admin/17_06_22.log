@@ -153,3 +153,20 @@ INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
 SQL: SHOW COLUMNS FROM `tgwu_wares` [ RunTime:0.0080s ]
 SQL: UPDATE `tgwu_wares` SET `wareName`='柔柔弱弱',`categoryId`='1',`wareCover`='/upload/2017/06/22/594b31851ce80.png',`wareMstChart`='/upload/2017/06/22/594b318d2aef4.png',`wareDesc`='发是非得失',`warePrice`='23',`status`='1',`wareCode`='2324423',`collTimes`='34',`browseTimes`='45',`inventory`='432',`discount`='-1',`cutPrice`='-1',`isNew`='-1',`isHot`='-1' WHERE ( id=11 ) [ RunTime:0.0330s ]
 
+[ 2017-06-22T17:22:01+08:00 ] ::1 /tangguowu/admin.php/Invitation/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

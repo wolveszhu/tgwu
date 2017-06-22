@@ -119,28 +119,6 @@
                 </button>
             </div>
             <div class="row">
-                <form action="<?php echo U('search');?>" method="get">
-                    <div class="col-md-2">
-                        <div class="input-group search">
-                            <input class="form-control" name="code" id="code" type="text" value="" placeholder="邀请码"/>
-                            <span class="input-group-btn">
-                                <button id="singcms-search" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i></button>
-                            </span>
-                        </div>
-                    </div>
-                </form>
-                <form action="<?php echo U('nameSearch');?>" method="get">
-                    <div class="col-md-2">
-                        <div class="input-group search">
-                            <input class="form-control" name="invitationName" id="nameSearch" type="text" value="" placeholder="用户昵称"/>
-                            <span class="input-group-btn">
-                                <button id="name-search" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i></button>
-                            </span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="row">
                 <div class="col-lg-6">
                     <h3></h3>
                     <div class="table-responsive">
@@ -159,28 +137,23 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <?php if(is_array($invitations)): $i = 0; $__LIST__ = $invitations;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$invitation): $mod = ($i % 2 );++$i;?><tr>
-                                        <td><?php echo ($invitation["id"]); ?></td>
-                                        <td><?php echo ($invitation["userid"]); ?></td>
-                                        <td><?php echo ($invitation["nickname"]); ?></td>
-                                        <td><?php echo ($invitation["invitationcode"]); ?></td>
-                                        <td><?php echo (standTime($invitation["invitationutime"])); ?></td>
-                                        <td><?php echo ($invitation["invitationctime"]); ?></td>
-                                        <td><?php echo (standTime($invitation["invitationetime"])); ?></td>
-                                        <td>
-                                            <a href="javascript:void(0)" attr-id="<?php echo ($invitation["id"]); ?>" id="singcms-delete"
-                                               attr-a="invitation" attr-message="删除"><span
-                                                    class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
-                                        </td>
-                                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+                                <tr>
+                                    <td><?php echo ($invitation["id"]); ?></td>
+                                    <td><?php echo ($invitation["userid"]); ?></td>
+                                    <td><?php echo ($invitation["nickname"]); ?></td>
+                                    <td><?php echo ($invitation["invitationcode"]); ?></td>
+                                    <td><?php echo ($invitation["invitationutime"]); ?></td>
+                                    <td><?php echo ($invitation["invitationctime"]); ?></td>
+                                    <td><?php echo ($invitation["invitationetime"]); ?></td>
+                                    <td>
+                                        <a href="javascript:void(0)" attr-id="<?php echo ($invitation["id"]); ?>" id="singcms-delete"
+                                           attr-a="invitation" attr-message="删除"><span
+                                                class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                         </form>
-                        <nav class="pagination">
-                            <ul>
-                                <?php echo ($page); ?>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
 
@@ -199,8 +172,6 @@
     var SCOPE = {
         'add_url': '<?php echo U("add");?>',
         'delete_url': '<?php echo U("delete");?>',
-        'search_url': '<?php echo U("search");?>',
-        'namesearch_url' : '<?php echo U("nameSearch");?>',
     }
 </script>
 
