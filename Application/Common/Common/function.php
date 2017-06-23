@@ -81,3 +81,7 @@ function isnull($int){
     }
     return $int;
 }
+
+function getUrl($data){
+    return __ROOT__.$data;
+}

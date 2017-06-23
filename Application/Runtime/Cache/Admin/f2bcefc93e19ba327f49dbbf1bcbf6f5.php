@@ -126,7 +126,7 @@
                             <div class="col-sm-5">
                                 <input id="file_upload"  type="file" multiple="true" name="carouselIcon">
                                 <img style="display: none" id="upload_org_code_img" src="<?php echo ($carousel["carouselicon"]); ?>" width="150" height="150">
-                                <input id="file_upload_image" name="thumb" type="hidden" multiple="true" value="<?php echo ($carousel["carouselicon"]); ?>">
+                                <input id="file_upload_image" name="carouselIcon" type="hidden" multiple="true" value="<?php echo ($carousel["carouselicon"]); ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -163,6 +163,7 @@
         'jump_url' : '<?php echo U("index");?>',
         'ajax_upload_image_url' : '<?php echo U("Image/ajaxuploadimage");?>',
         'ajax_upload_swf' : '/tangguowu/Public/Js/uploadify/uploadify.swf',
+        'root' : '/tangguowu',
     };
 
 </script>

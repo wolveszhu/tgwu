@@ -6,7 +6,7 @@
  * Time: 10:47
  */
 
-namespace Admin\Model;
+namespace Home\Model;
 use Think\Model;
 
 class CarouselModel extends Model{
@@ -130,6 +130,6 @@ class CarouselModel extends Model{
             'status' => '1',
         ];
 
-        return $this -> _db -> field('carouselIcon,carouselPath') -> where($where) -> order($data) -> select();
+        return $this -> _db -> field('carouselIcon,carouselDesc') -> where($where) -> order($data) -> select();
     }
 }

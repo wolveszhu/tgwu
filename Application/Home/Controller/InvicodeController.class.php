@@ -8,12 +8,8 @@
 namespace Home\Controller;
 use Think\Controller;
 
-class InviCodeController extends Controller{
+class InvicodeController extends Controller{
     public function index(){
         $this -> display();
-    }
-
-    public function check(){
-
     }
 }

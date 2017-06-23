@@ -393,3 +393,81 @@ SQL: INSERT INTO `tgwu_invitation` (`invitationCode`,`invitationCtime`,`invitati
 SQL: INSERT INTO `tgwu_invitation` (`invitationCode`,`invitationCtime`,`invitationEtime`) VALUES ('ATVJLB','1498194686','-1') [ RunTime:0.0270s ]
 NOTIC: [8] Undefined variable: errors D:\Apache24\htdocs\tangguowu\Application\Admin\Controller\InvitationController.class.php 第 104 行.
 
+[ 2017-06-23T17:01:47+08:00 ] ::1 /tangguowu/admin.php/Carousel/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-06-23T17:01:51+08:00 ] ::1 /tangguowu/admin.php/Carousel/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-06-23T17:02:36+08:00 ] ::1 /tangguowu/admin.php/Carousel/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-06-23T17:04:23+08:00 ] ::1 /tangguowu/admin.php/Carousel/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_carousel` [ RunTime:0.0060s ]
+SQL: UPDATE `tgwu_carousel` SET `carouselDesc`='发斯蒂芬',`carouselIcon`='/upload/2017/06/23/594cd9963ee4f.png',`carouselPath`='https://baidu.com' WHERE ( id=7 ) [ RunTime:0.2230s ]
+
+[ 2017-06-23T17:06:50+08:00 ] ::1 /tangguowu/admin.php/Carousel/setStatus.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_carousel` [ RunTime:0.0160s ]
+SQL: UPDATE `tgwu_carousel` SET `status`='1' WHERE ( id=7 ) [ RunTime:0.0650s ]
+
+[ 2017-06-23T17:07:00+08:00 ] ::1 /tangguowu/admin.php/Carousel/setStatus.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_carousel` [ RunTime:0.0040s ]
+SQL: UPDATE `tgwu_carousel` SET `status`='0' WHERE ( id=19 ) [ RunTime:0.0360s ]
+
+[ 2017-06-23T17:07:08+08:00 ] ::1 /tangguowu/admin.php/Carousel/setStatus.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_carousel` [ RunTime:0.0040s ]
+SQL: UPDATE `tgwu_carousel` SET `status`='0' WHERE ( id=20 ) [ RunTime:0.0310s ]
+
+[ 2017-06-23T17:07:11+08:00 ] ::1 /tangguowu/admin.php/Carousel/setStatus.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_carousel` [ RunTime:0.0040s ]
+SQL: UPDATE `tgwu_carousel` SET `status`='0' WHERE ( id=4 ) [ RunTime:0.0520s ]
+
+[ 2017-06-23T17:17:57+08:00 ] ::1 /tangguowu/admin.php/Carousel/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_carousel` [ RunTime:0.0030s ]
+SQL: UPDATE `tgwu_carousel` SET `carouselDesc`='发斯蒂芬',`carouselIcon`='/upload/2017/06/23/594cdcc41cd96.png',`carouselPath`='https://baidu.com' WHERE ( id=7 ) [ RunTime:0.0530s ]
+
+[ 2017-06-23T17:18:10+08:00 ] ::1 /tangguowu/admin.php/Carousel/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tgwu_carousel` [ RunTime:0.0030s ]
+SQL: UPDATE `tgwu_carousel` SET `carouselDesc`='bingo',`carouselIcon`='/upload/2017/06/23/594cdcd053f39.png',`carouselPath`='https://baidu.com' WHERE ( id=5 ) [ RunTime:0.0740s ]
+
+[ 2017-06-23T17:18:18+08:00 ] ::1 /tangguowu/admin.php/Carousel/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tgwu_carousel` [ RunTime:0.0030s ]
+SQL: UPDATE `tgwu_carousel` SET `carouselDesc`='520大作战',`carouselIcon`='/upload/2017/06/23/594cdcd89734a.png',`carouselPath`='https://baidu.com' WHERE ( id=1 ) [ RunTime:0.0530s ]
+
+[ 2017-06-23T17:18:32+08:00 ] ::1 /tangguowu/admin.php/Carousel/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `tgwu_carousel` [ RunTime:0.0140s ]
+SQL: UPDATE `tgwu_carousel` SET `carouselDesc`='污聊大发',`carouselIcon`='/upload/2017/06/23/594cdce68edb1.png',`carouselPath`='https://baidu.com' WHERE ( id=2 ) [ RunTime:0.0300s ]
+

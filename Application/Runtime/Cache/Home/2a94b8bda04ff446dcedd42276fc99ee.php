@@ -24,15 +24,23 @@
     <ol class="carousel-indicators carouselInd">
         <li data-target="#myCarousel" data-slide-to="0" class="active carouselLi"></li>
         <li data-target="#myCarousel" data-slide-to="1" class="carouselLi"></li>
+        <li data-target="#myCarousel" data-slide-to="1" class="carouselLi"></li>
+        <li data-target="#myCarousel" data-slide-to="1" class="carouselLi"></li>
     </ol>
     <!-- 轮播（Carousel）项目 -->
     <div class="carousel-inner">
         <div class="item active">
             <img src="/tangguowu/Public/Home/Image/juhuasuan.png" class="carPto" alt="juhuasuan">
         </div>
+        <?php if(is_array($carousels)): $i = 0; $__LIST__ = $carousels;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$carousel): $mod = ($i % 2 );++$i;?><div class="item">
+                <img src="<?php echo (getUrl($carousel["carouselicon"])); ?>" class="carPto" alt="<?php echo ($carousel["carouseldesc"]); ?>">
+            </div><?php endforeach; endif; else: echo "" ;endif; ?>
+        <!--<div class="item active">
+            <img src="/tangguowu/Public/Home/Image/juhuasuan.png" class="carPto" alt="juhuasuan">
+        </div>
         <div class="item">
             <img src="/tangguowu/Public/Home/Image/zhui.png" class="carPto" alt="zhui">
-        </div>
+        </div>-->
     </div>
     <!-- 轮播（Carousel）导航 -->
     <a class="carousel-control left" href="#myCarousel" data-slide="prev"></a>
