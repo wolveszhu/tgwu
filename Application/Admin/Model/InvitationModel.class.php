@@ -55,4 +55,11 @@ class InvitationModel extends Model {
         $data['nickName'] = array('like',"%{$name}%");
         return $this -> _db -> where($data) -> select();
     }
+
+    public function insert($data){
+        if(!$data || !is_array($data)){
+            return 0;
+        }
+        return $this -> _db -> add($data);
+    }
 }

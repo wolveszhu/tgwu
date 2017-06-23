@@ -115,7 +115,7 @@
             <div>
                 <button id="button-add" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-plus"
-                                                                         aria-hidden="true"></span>添加
+                                                                         aria-hidden="true"></span>生成邀请码
                 </button>
             </div>
             <div class="row">
@@ -161,11 +161,11 @@
                                 <tbody>
                                 <?php if(is_array($invitations)): $i = 0; $__LIST__ = $invitations;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$invitation): $mod = ($i % 2 );++$i;?><tr>
                                         <td><?php echo ($invitation["id"]); ?></td>
-                                        <td><?php echo ($invitation["userid"]); ?></td>
-                                        <td><?php echo ($invitation["nickname"]); ?></td>
+                                        <td><?php echo (isnull($invitation["userid"])); ?></td>
+                                        <td><?php echo (isnull($invitation["nickname"])); ?></td>
                                         <td><?php echo ($invitation["invitationcode"]); ?></td>
                                         <td><?php echo (standTime($invitation["invitationutime"])); ?></td>
-                                        <td><?php echo ($invitation["invitationctime"]); ?></td>
+                                        <td><?php echo (standTime($invitation["invitationctime"])); ?></td>
                                         <td><?php echo (standTime($invitation["invitationetime"])); ?></td>
                                         <td>
                                             <a href="javascript:void(0)" attr-id="<?php echo ($invitation["id"]); ?>" id="singcms-delete"

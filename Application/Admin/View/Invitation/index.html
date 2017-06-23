@@ -28,7 +28,7 @@
             <div>
                 <button id="button-add" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-plus"
-                                                                         aria-hidden="true"></span>添加
+                                                                         aria-hidden="true"></span>生成邀请码
                 </button>
             </div>
             <div class="row">
@@ -75,11 +75,11 @@
                                 <volist name="invitations" id="invitation">
                                     <tr>
                                         <td>{$invitation.id}</td>
-                                        <td>{$invitation.userid}</td>
-                                        <td>{$invitation.nickname}</td>
+                                        <td>{$invitation.userid|isnull}</td>
+                                        <td>{$invitation.nickname|isnull}</td>
                                         <td>{$invitation.invitationcode}</td>
                                         <td>{$invitation.invitationutime|standTime}</td>
-                                        <td>{$invitation.invitationctime}</td>
+                                        <td>{$invitation.invitationctime|standTime}</td>
                                         <td>{$invitation.invitationetime|standTime}</td>
                                         <td>
                                             <a href="javascript:void(0)" attr-id="{$invitation.id}" id="singcms-delete"

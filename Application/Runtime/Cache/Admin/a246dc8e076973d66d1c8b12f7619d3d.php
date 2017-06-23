@@ -101,10 +101,10 @@
 
                     <ol class="breadcrumb">
                         <li>
-                            <i class="fa fa-dashboard"></i>  <a href="<?php echo U('index');?>">邀请码管理</a>
+                            <i class="fa fa-dashboard"></i>  <a href="<?php echo U('index');?>">轮播图管理</a>
                         </li>
                         <li class="active">
-                            <i class="fa fa-edit"></i> 邀请码生成
+                            <i class="fa fa-edit"></i> 轮播图添加
                         </li>
                     </ol>
                 </div>
@@ -116,27 +116,38 @@
 
                     <form class="form-horizontal" id="singcms-form">
                         <div class="form-group">
-                            <label for="inviNum" class="col-sm-2 control-label">生成数量:</label>
+                            <label for="carousdesc" class="col-sm-2 control-label">描述:</label>
                             <div class="col-sm-5">
-                                <input type="number" name="inviNum" class="form-control" id="inviNum" placeholder="请填写生成数量">
+                                <input type="text" name="carouselDesc" class="form-control" id="carousdesc" placeholder="请填写描述">
                             </div>
                         </div>
-
                         <div class="form-group">
-                            <label for="termOfValidity" class="col-sm-2 control-label">有效期:</label>
-                            <div class="col-sm-8">
-                                <input type="radio" name="termOfValidity" id="termOfValidity0" value="-1">无期限&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="termOfValidity" id="termOfValidity1" value="1"> 一个月&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="termOfValidity" id="termOfValidity2" value="2"> 二个月&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="termOfValidity" id="termOfValidity3" value="3"> 三个月&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="termOfValidity" id="termOfValidity4"> 自定义
-                                <input type="text"  name="termOfValidity" id="termOfValidity5" value=""> 个月
+                            <label class="col-sm-2 control-label">轮播图缩图:</label>
+                            <div class="col-sm-5">
+                                <input id="file_upload"  type="file" name="carouselIcon">
+                                <img style="display: none" id="upload_org_code_img" src="" width="150" height="150">
+                                <input id="file_upload_image" name="carouselIcon" type="hidden" multiple="true" value="">
                             </div>
-
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">轮播图状态:</label>
+                            <div class="col-sm-5">
+                                <select class="form-control" name="status">
+                                    <option value="0">==请选择状态==</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="carouskip" class="col-sm-2 control-label">轮播图跳转地址:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="carouselPath" id="carouskip" placeholder="轮播图跳转地址">
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="button" class="btn btn-default" id="singcms-button-submitradio">提交</button>
+                                <button type="button" class="btn btn-default" id="singcms-button-submit">提交</button>
                             </div>
                         </div>
                     </form>
@@ -156,12 +167,25 @@
 </div>
 <script>
     var SCOPE = {
-        'save_url' : '<?php echo U("save");?>',
+        'save_url' : '<?php echo U("add");?>',
         'jump_url' : '<?php echo U("index");?>',
+        'ajax_upload_image_url' : '<?php echo U("Image/ajaxuploadimage");?>',
+        'ajax_upload_swf' : '/tangguowu/Public/Js/uploadify/uploadify.swf',
+        'root' : '/tangguowu',
     };
 
 </script>
 <!-- /#wrapper -->
+<script src="/tangguowu/Public/Admin/Js/image.js"></script>
+<!--<script>
+    // 6.2
+    KindEditor.ready(function(K) {
+        window.editor = K.create('#editor_singcms',{
+            uploadJson : '',
+            afterBlur : function(){this.sync();}, //
+        });
+    });
+</script>-->
 <script src="/tangguowu/Public/Admin/Js/common.js"></script>
 
 

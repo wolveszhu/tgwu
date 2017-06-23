@@ -39,6 +39,7 @@
 
 
 <body>
+
 <div id="wrapper">
 
     <!-- Navigation -->
@@ -90,7 +91,7 @@
         </ul>
     </div>
 </nav>
-    <script src="/tangguowu/Public/Js/kindeditor/kindeditor-all.js"></script>
+
     <div id="page-wrapper">
 
         <div class="container-fluid">
@@ -98,70 +99,70 @@
             <!-- Page Heading -->
             <div class="row">
                 <div class="col-lg-12">
-
+                    <h1 class="page-header">
+                        您好<?php echo getLoginUsername()?>!欢迎使用糖果屋内容管理平台
+                    </h1>
                     <ol class="breadcrumb">
-                        <li>
-                            <i class="fa fa-dashboard"></i>  <a href="<?php echo U('index');?>">邀请码管理</a>
-                        </li>
                         <li class="active">
-                            <i class="fa fa-edit"></i> 邀请码生成
+                            <i class="fa fa-dashboard"></i> 平台整理指标
                         </li>
                     </ol>
                 </div>
             </div>
-            <!-- /.row -->
+
 
             <div class="row">
-                <div class="col-lg-6">
-
-                    <form class="form-horizontal" id="singcms-form">
-                        <div class="form-group">
-                            <label for="inviNum" class="col-sm-2 control-label">生成数量:</label>
-                            <div class="col-sm-5">
-                                <input type="number" name="inviNum" class="form-control" id="inviNum" placeholder="请填写生成数量">
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-tasks fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge"><?php echo ($waresCount); ?></div>
+                                    <div>商品数量</div>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            <label for="termOfValidity" class="col-sm-2 control-label">有效期:</label>
-                            <div class="col-sm-8">
-                                <input type="radio" name="termOfValidity" id="termOfValidity0" value="-1">无期限&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="termOfValidity" id="termOfValidity1" value="1"> 一个月&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="termOfValidity" id="termOfValidity2" value="2"> 二个月&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="termOfValidity" id="termOfValidity3" value="3"> 三个月&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="termOfValidity" id="termOfValidity4"> 自定义
-                                <input type="text"  name="termOfValidity" id="termOfValidity5" value=""> 个月
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">查看</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
                             </div>
-
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="button" class="btn btn-default" id="singcms-button-submitradio">提交</button>
-                            </div>
-                        </div>
-                    </form>
-
-
+                        </a>
+                    </div>
                 </div>
-
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa glyphicon glyphicon-asterisk  fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge"><?php echo ($maxBrowse); ?></div>
+                                    <div>最大浏览数商品</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a target="_blank" href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left"></span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <!-- /.row -->
-
         </div>
-        <!-- /.container-fluid -->
 
     </div>
-    <!-- /#page-wrapper -->
 
 </div>
-<script>
-    var SCOPE = {
-        'save_url' : '<?php echo U("save");?>',
-        'jump_url' : '<?php echo U("index");?>',
-    };
 
-</script>
-<!-- /#wrapper -->
 <script src="/tangguowu/Public/Admin/Js/common.js"></script>
 
 

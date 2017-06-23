@@ -74,3 +74,10 @@ function showKind($status,$data) {
 function getLoginUsername() {
     return $_SESSION['adminUser']['adminname'] ? $_SESSION['adminUser']['adminname']: '';
 }
+
+function isnull($int){
+    if(is_null($int)){
+        $int = "未使用";
+    }
+    return $int;
+}
