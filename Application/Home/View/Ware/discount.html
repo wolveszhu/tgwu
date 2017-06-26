@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>糖果屋</title>
+    <meta name="keywords" content="糖果屋,玩具,坚果,糖果,饮料,进口食品,卤食,肉类制品,蜜饯果干">
+    <meta name="description" content="糖果屋,您购物的一站式天堂">
+    <link rel="stylesheet" href="__PUBLIC__/Home/Css/index.css" type="text/css">
+    <link rel="stylesheet" href="__PUBLIC__/Css/bootstrap.min.css" type="text/css">
+    <script src="__PUBLIC__/Home/Js/index.js"></script>
+</head>
+<body id="body">
+<!--新品上市-->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-3 ret"><a href="{:U('Index/index')}" class="morePro"><img src="__PUBLIC__/Image/ret.png" class="retIcon"></a></div>
+        <div class="col-xs-6 new">特价促销</div>
+        <div class="col-xs-3"></div>
+    </div>
+    <div class="row">
+        <volist name="wares" id="ware">
+            <div class="col-xs-4 newpro">
+                <a href="{:U('Ware/index',array('id'=>$ware['id']))}">
+                    <img src="{$ware.warecover|getUrl}" class="proImg" alt="{$ware.waredesc}">
+                </a>
+                <div class="desc">{$ware.waredesc}</div>
+                <div class="shoucang">
+                    <div class="row">
+                        <div class="col-xs-3"><img src="__PUBLIC__/Image/shoucang.png" class="scPto"></div>
+                        <div class="col-xs-9">{$ware.colltimes}人已收藏</div>
+                    </div>
+                </div>
+            </div>
+        </volist>
+    </div>
+</div>
+</body>
+<script src="__PUBLIC__/Js/jquery.min.js"></script>
+<script src="__PUBLIC__/Js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    var width = $(".newpro").width() * 0.9;
+    var height = width * 1.5;
+    var imgWH = $(".proImg");
+    imgWH.attr('width',width);
+    imgWH.attr('height',height);
+    var desc = $(".desc");
+    desc.attr('width',width);
+</script>
+</html>

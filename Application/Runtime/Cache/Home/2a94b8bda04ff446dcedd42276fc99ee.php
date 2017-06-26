@@ -54,8 +54,8 @@
 </div>
 <!--特价and爆款-->
 <div class="bao_te">
-    <div class="te"><img src="/tangguowu/Public/Image/tejia.png">&nbsp;特价促销</div>
-    <div class="bao"><img src="/tangguowu/Public/Image/baokuan.png">&nbsp;爆款推荐</div>
+    <div class="te"><a href="<?php echo U('Ware/discount');?>"><img src="/tangguowu/Public/Image/tejia.png">&nbsp;特价促销</a></div>
+    <div class="bao"><a href="<?php echo U('Ware/hotter');?>"><img src="/tangguowu/Public/Image/baokuan.png">&nbsp;爆款推荐</a></div>
 </div>
 <!--新品上市-->
 <div class="container" id="container1">
@@ -63,12 +63,12 @@
         <div class="col-xs-3"></div>
         <div class="col-xs-6 new"><img src="/tangguowu/Public/Image/hengxian.png">&nbsp;新品上架&nbsp;<img
                 src="/tangguowu/Public/Image/hengxian.png"></div>
-        <div class="col-xs-3 more"><a href="<?php echo U('newProduct/more');?>" class="morePro">更多&nbsp;<img
+        <div class="col-xs-3 more"><a href="<?php echo U('Ware/more');?>" class="morePro">更多&nbsp;<img
                 src="/tangguowu/Public/Image/more.png" class="gengduo"></a></div>
     </div>
     <div class="row">
         <?php if(is_array($wares)): $i = 0; $__LIST__ = $wares;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$ware): $mod = ($i % 2 );++$i;?><div class="col-xs-4 newpro">
-                <a href="#">
+                <a href="<?php echo U('Ware/index',array('id'=>$ware['id']));?>">
                     <img src="<?php echo (getUrl($ware["warecover"])); ?>" class="proImg" alt="<?php echo ($ware["waredesc"]); ?>">
                 </a>
                 <div class="desc"><?php echo ($ware["waredesc"]); ?></div>

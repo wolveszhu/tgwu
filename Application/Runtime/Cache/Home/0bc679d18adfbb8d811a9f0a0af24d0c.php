@@ -16,7 +16,7 @@
     <!-- 轮播（Carousel）项目 -->
     <div class="carousel-inner tgDet">
         <div class="item active">
-            <img src="<?php echo (getUrl($ware["waremstchart"])); ?>" class="tangguo" alt="juhuasuan">
+            <img src="<?php echo (getUrl($ware["warecover"])); ?>" class="tangguo" alt="juhuasuan">
         </div>
         <div class="item">
             <img src="/tangguowu/Public/Home/Image/tangguoDet.png" class="tangguo" alt="zhui">

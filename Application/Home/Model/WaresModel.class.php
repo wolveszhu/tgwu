@@ -26,17 +26,8 @@ class WaresModel extends Model{
         return $this -> _db -> where($where) -> order($data) -> limit(0,6) -> select();
     }
 
-    public function getWaresCount(){
-        return $this -> _db -> count('id');
-    }
-
-
     public function getWareById($id){
         return $this -> _db -> where('id = ' . $id) -> find();
-    }
-
-    public function getMaxWaresBrowse(){
-        return $this -> _db -> distinct(true) -> field('wareName') -> group('browseTimes') -> order('browseTimes desc') -> limit(1) -> select();
     }
 
     public function getWaresKind($categoryId){
@@ -49,6 +40,36 @@ class WaresModel extends Model{
             'wareSort' => 'desc',
             'id' => 'desc'
         ];
+        return $this -> _db -> where($where) -> order($order) -> select();
+    }
+
+    public function getWaresDis(){
+        return $this -> _db -> query("SELECT * FROM `tgwu_wares` WHERE `status` = '1' AND (( `discount` != '0' ) or ( `cutPrice` != '0' )) ORDER BY `wareDesc` desc ");
+    }
+
+    public function getWareHot(){
+        $where = [
+            'status' => '1',
+            'isHot' => '1'
+        ];
+
+        $order = [
+            'wareSort' => 'desc'
+        ];
+
+        return $this -> _db -> where($where) -> order($order) -> select();
+    }
+
+    public function getWareNew(){
+        $where = [
+            'status' => '1',
+            'isNew' => '1'
+        ];
+
+        $order = [
+            'wareSort' => 'desc'
+        ];
+
         return $this -> _db -> where($where) -> order($order) -> select();
     }
 }

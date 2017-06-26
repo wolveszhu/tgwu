@@ -2,3 +2,21 @@
 ERR: 1146:Table 'tangguowu.tgwu_ware' doesn't exist
  [ SQL语句 ] : SHOW COLUMNS FROM `tgwu_ware`
 
+[ 2017-06-26T14:29:35+08:00 ] ::1 /tangguowu/index.php/newProduct/more.html
+ERR: 无法加载控制器:NewProduct
+
+[ 2017-06-26T14:39:17+08:00 ] 192.168.18.193 /tangguowu/index.php/newProduct/more.html
+ERR: 无法加载控制器:NewProduct
+
+[ 2017-06-26T15:14:58+08:00 ] ::1 /tangguowu/index.php/Ware/hotter.html
+ERR: Think\Model:getWareHot方法不存在！
+
+[ 2017-06-26T15:41:24+08:00 ] ::1 /tangguowu/index.php/newProduct/more.html
+ERR: 无法加载控制器:NewProduct
+
+[ 2017-06-26T15:44:51+08:00 ] ::1 /tangguowu/index.php/Ware/hotter.html
+ERR: Think\Model:getWareHot方法不存在！
+
+[ 2017-06-26T16:06:19+08:00 ] ::1 /tangguowu/index.php/newProduct/more.html
+ERR: 无法加载控制器:NewProduct
+
