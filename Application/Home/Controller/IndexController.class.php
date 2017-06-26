@@ -16,4 +16,14 @@ class IndexController extends Controller {
         $this -> assign('wares',$wares);
         $this -> display();
     }
+
+    public function collect(){
+        $id = intval($_POST['id']);
+        $res = D('Wares') -> collectNumPlus($id);
+        if(!$res){
+            return show(0,"收藏失败");
+        }else{
+            return show(1,"收藏成功");
+        }
+    }
 }

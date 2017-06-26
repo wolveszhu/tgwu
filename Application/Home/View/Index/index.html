@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="__PUBLIC__/Css/bootstrap.min.css" type="text/css">
     <script src="__PUBLIC__/Js/jquery.min.js"></script>
     <script src="__PUBLIC__/Js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/Js/layer/layer.js"></script>
+    <script src="__PUBLIC__/Js/dialog.js"></script>
     <script src="__PUBLIC__/Home/Js/index.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -83,7 +85,7 @@
                 <div class="desc">{$ware.waredesc}</div>
                 <div class="shoucang">
                     <div class="row">
-                        <div class="col-xs-3"><img src="__PUBLIC__/Image/shoucang.png" class="scPto"></div>
+                        <div class="col-xs-3"><img src="__PUBLIC__/Image/shoucang.png" data-id="{$ware.id}" id="ware-detail" class="scPto"></div>
                         <div class="col-xs-9">{$ware.colltimes}人已收藏</div>
                     </div>
                 </div>
@@ -100,6 +102,11 @@
     <div class="rightBot">技术支持</div>
 </div>
 </body>
+<script>
+    var SCOPE = {
+        'coll_url' : '{:U("collect")}',
+    }
+</script>
 <script type="text/javascript">
     var widthDev = document.documentElement.clientWidth;
     var heightDev = widthDev / 1.5;

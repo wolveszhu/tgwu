@@ -8,6 +8,8 @@
     <meta name="description" content="糖果屋,您购物的一站式天堂">
     <link rel="stylesheet" href="/tangguowu/Public/Home/Css/index.css" type="text/css">
     <link rel="stylesheet" href="/tangguowu/Public/Css/bootstrap.min.css" type="text/css">
+    <script src="/tangguowu/Public/Js/jquery.min.js"></script>
+    <script src="/tangguowu/Public/Js/bootstrap.min.js"></script>
     <script src="/tangguowu/Public/Home/Js/index.js"></script>
 </head>
 <body id="body">
@@ -34,8 +36,6 @@
     </div>
 </div>
 </body>
-<script src="/tangguowu/Public/Js/jquery.min.js"></script>
-<script src="/tangguowu/Public/Js/bootstrap.min.js"></script>
 <script type="text/javascript">
     var width = $(".newpro").width() * 0.9;
     var height = width * 1.5;

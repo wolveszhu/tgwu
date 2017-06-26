@@ -72,4 +72,8 @@ class WaresModel extends Model{
 
         return $this -> _db -> where($where) -> order($order) -> select();
     }
+
+    public function collectNumPlus($id){
+        return $this -> _db -> where('id = ' . $id) -> setInc('collTimes');
+    }
 }
