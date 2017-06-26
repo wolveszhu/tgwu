@@ -76,7 +76,7 @@
                 <div class="desc"><?php echo ($ware["waredesc"]); ?></div>
                 <div class="shoucang">
                     <div class="row">
-                        <div class="col-xs-3"><img src="/tangguowu/Public/Image/shoucang.png" data-id="<?php echo ($ware["id"]); ?>" id="ware-detail" class="scPto"></div>
+                        <div class="col-xs-3"><img src="/tangguowu/Public/Image/shoucang.png" attr-id="<?php echo ($ware["id"]); ?>" class="scPto ware-detail"></div>
                         <div class="col-xs-9"><?php echo ($ware["colltimes"]); ?>人已收藏</div>
                     </div>
                 </div>
