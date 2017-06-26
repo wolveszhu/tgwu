@@ -65,10 +65,17 @@
                             </div>
                         </div>
 
+                        <!--<div class="form-group">-->
+                            <!--<label for="waredesc" class="col-sm-2 control-label">描述:</label>-->
+                            <!--<div class="col-sm-5">-->
+                                <!--<input type="text" name="wareDesc" class="form-control" value="{$ware.waredesc}" id="waredesc" placeholder="请填写描述">-->
+                            <!--</div>-->
+                        <!--</div>-->
+
                         <div class="form-group">
-                            <label for="waredesc" class="col-sm-2 control-label">描述:</label>
+                            <label class="col-sm-2 control-label">描述:</label>
                             <div class="col-sm-5">
-                                <input type="text" name="wareDesc" class="form-control" value="{$ware.waredesc}" id="waredesc" placeholder="请填写描述">
+                                <textarea class="input js-editor" id="editor_singcms" name="wareDesc" rows="21">{$ware.waredesc}</textarea>
                             </div>
                         </div>
 
@@ -182,13 +189,16 @@
 </script>
 <!-- /#wrapper -->
 <script src="__PUBLIC__/Admin/Js/image.js"></script>
-<!--<script>
+<script>
     // 6.2
     KindEditor.ready(function(K) {
         window.editor = K.create('#editor_singcms',{
             uploadJson : '',
+            items: [
+                'fontname', 'fontsize', '|', 'forecolor', 'bold', 'italic',
+                'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', '|','copy','cut','paste', '|', 'emoticons'],
             afterBlur : function(){this.sync();}, //
         });
     });
-</script>-->
+</script>
 <include file="Index/footer" />

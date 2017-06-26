@@ -15,82 +15,24 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-3 ret"><a href="{:U('Index/index')}" class="morePro"><img src="__PUBLIC__/Image/ret.png" class="retIcon"></a></div>
-        <div class="col-xs-6 new">玩具类</div>
+        <div class="col-xs-6 new">{$category.categoryname}</div>
         <div class="col-xs-3"></div>
     </div>
     <div class="row">
-        <div class="col-xs-4 newpro">
-            <a href="#">
-                <img src="__PUBLIC__/Home/Image/maoxiong.png" class="proImg" alt="坚果">
-            </a>
-            <div class="desc">抹茶味正宗山货薯条500g/袋</div>
-            <div class="shoucang">
-                <div class="row">
-                    <div class="col-xs-3"><img src="__PUBLIC__/Image/shoucang.png" class="scPto"></div>
-                    <div class="col-xs-9">25人已收藏</div>
+        <volist name="wares" id="ware">
+            <div class="col-xs-4 newpro">
+                <a href="{:U('Ware/index',array('id' => $ware['id']))}">
+                    <img src="{$ware.warecover|getUrl}" class="proImg" alt="坚果">
+                </a>
+                <div class="desc">{$ware.waredesc}</div>
+                <div class="shoucang">
+                    <div class="row">
+                        <div class="col-xs-3"><img src="__PUBLIC__/Image/shoucang.png" class="scPto"></div>
+                        <div class="col-xs-9">{$ware.colltimes}人已收藏</div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-xs-4 newpro">
-            <a href="#">
-                <img src="__PUBLIC__/Home/Image/paopaoji.png" class="proImg" alt="卤食">
-            </a>
-            <div class="desc">卤食类</div>
-            <div class="shoucang">
-                <div class="row">
-                    <div class="col-xs-3"><img src="__PUBLIC__/Image/shoucang.png" class="scPto"></div>
-                    <div class="col-xs-9">123人已收藏</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-4 newpro">
-            <a href="#">
-                <img src="__PUBLIC__/Home/Image/bianxing.png" class="proImg" alt="玩具">
-            </a>
-            <div class="desc">新疆葡萄干500g/袋</div>
-            <div class="shoucang">
-                <div class="row">
-                    <div class="col-xs-3"><img src="__PUBLIC__/Image/shoucang.png" class="scPto"></div>
-                    <div class="col-xs-9">62人已收藏</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-4 newpro">
-            <a href="#">
-                <img src="__PUBLIC__/Home/Image/gongzai.png" class="proImg" alt="糖果">
-            </a>
-            <div class="desc">竹炭花生正宗台湾口味500g/袋</div>
-            <div class="shoucang">
-                <div class="row">
-                    <div class="col-xs-3"><img src="__PUBLIC__/Image/shoucang.png" class="scPto"></div>
-                    <div class="col-xs-9">462人已收藏</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-4 newpro">
-            <a href="#">
-                <img src="__PUBLIC__/Home/Image/feixia.png" class="proImg" alt="卤食">
-            </a>
-            <div class="desc">卤食类</div>
-            <div class="shoucang">
-                <div class="row">
-                    <div class="col-xs-3"><img src="__PUBLIC__/Image/shoucang.png" class="scPto"></div>
-                    <div class="col-xs-9">123人已收藏</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-4 newpro">
-            <a href="#">
-                <img src="__PUBLIC__/Home/Image/baozhen.png" class="proImg" alt="饮料">
-            </a>
-            <div class="desc">榴莲干450g/袋</div>
-            <div class="shoucang">
-                <div class="row">
-                    <div class="col-xs-3"><img src="__PUBLIC__/Image/shoucang.png" class="scPto"></div>
-                    <div class="col-xs-9">56人已收藏</div>
-                </div>
-            </div>
-        </div>
+        </volist>
     </div>
 </div>
 </body>

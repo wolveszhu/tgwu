@@ -15,82 +15,22 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-3 ret"><a href="<?php echo U('Index/index');?>" class="morePro"><img src="/tangguowu/Public/Image/ret.png" class="retIcon"></a></div>
-        <div class="col-xs-6 new">玩具类</div>
+        <div class="col-xs-6 new"><?php echo ($category["categoryname"]); ?></div>
         <div class="col-xs-3"></div>
     </div>
     <div class="row">
-        <div class="col-xs-4 newpro">
-            <a href="#">
-                <img src="/tangguowu/Public/Home/Image/maoxiong.png" class="proImg" alt="坚果">
-            </a>
-            <div class="desc">抹茶味正宗山货薯条500g/袋</div>
-            <div class="shoucang">
-                <div class="row">
-                    <div class="col-xs-3"><img src="/tangguowu/Public/Image/shoucang.png" class="scPto"></div>
-                    <div class="col-xs-9">25人已收藏</div>
+        <?php if(is_array($wares)): $i = 0; $__LIST__ = $wares;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$ware): $mod = ($i % 2 );++$i;?><div class="col-xs-4 newpro">
+                <a href="<?php echo U('Ware/index',array('id' => $ware['id']));?>">
+                    <img src="<?php echo (getUrl($ware["warecover"])); ?>" class="proImg" alt="坚果">
+                </a>
+                <div class="desc"><?php echo ($ware["waredesc"]); ?></div>
+                <div class="shoucang">
+                    <div class="row">
+                        <div class="col-xs-3"><img src="/tangguowu/Public/Image/shoucang.png" class="scPto"></div>
+                        <div class="col-xs-9"><?php echo ($ware["colltimes"]); ?>人已收藏</div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-xs-4 newpro">
-            <a href="#">
-                <img src="/tangguowu/Public/Home/Image/paopaoji.png" class="proImg" alt="卤食">
-            </a>
-            <div class="desc">卤食类</div>
-            <div class="shoucang">
-                <div class="row">
-                    <div class="col-xs-3"><img src="/tangguowu/Public/Image/shoucang.png" class="scPto"></div>
-                    <div class="col-xs-9">123人已收藏</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-4 newpro">
-            <a href="#">
-                <img src="/tangguowu/Public/Home/Image/bianxing.png" class="proImg" alt="玩具">
-            </a>
-            <div class="desc">新疆葡萄干500g/袋</div>
-            <div class="shoucang">
-                <div class="row">
-                    <div class="col-xs-3"><img src="/tangguowu/Public/Image/shoucang.png" class="scPto"></div>
-                    <div class="col-xs-9">62人已收藏</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-4 newpro">
-            <a href="#">
-                <img src="/tangguowu/Public/Home/Image/gongzai.png" class="proImg" alt="糖果">
-            </a>
-            <div class="desc">竹炭花生正宗台湾口味500g/袋</div>
-            <div class="shoucang">
-                <div class="row">
-                    <div class="col-xs-3"><img src="/tangguowu/Public/Image/shoucang.png" class="scPto"></div>
-                    <div class="col-xs-9">462人已收藏</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-4 newpro">
-            <a href="#">
-                <img src="/tangguowu/Public/Home/Image/feixia.png" class="proImg" alt="卤食">
-            </a>
-            <div class="desc">卤食类</div>
-            <div class="shoucang">
-                <div class="row">
-                    <div class="col-xs-3"><img src="/tangguowu/Public/Image/shoucang.png" class="scPto"></div>
-                    <div class="col-xs-9">123人已收藏</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-4 newpro">
-            <a href="#">
-                <img src="/tangguowu/Public/Home/Image/baozhen.png" class="proImg" alt="饮料">
-            </a>
-            <div class="desc">榴莲干450g/袋</div>
-            <div class="shoucang">
-                <div class="row">
-                    <div class="col-xs-3"><img src="/tangguowu/Public/Image/shoucang.png" class="scPto"></div>
-                    <div class="col-xs-9">56人已收藏</div>
-                </div>
-            </div>
-        </div>
+            </div><?php endforeach; endif; else: echo "" ;endif; ?>
     </div>
 </div>
 </body>

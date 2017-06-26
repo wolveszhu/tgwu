@@ -120,6 +120,19 @@ class CarouselModel extends Model{
         return $this -> _db -> where('id=' . $id) -> save($data);
     }
 
+    public function getCarouselstatusOne(){
+        $data = [
+            'id' => 'desc',
+            'carouselSort' => 'desc'
+        ];
+
+        $where = [
+            'status' => '1',
+        ];
+
+        return $this -> _db -> field('carouselIcon,carouselDesc') -> where($where) -> order($data) -> limit(1) -> select();
+    }
+
     public function getCarouselstatus(){
         $data = [
             'id' => 'desc',
@@ -130,6 +143,6 @@ class CarouselModel extends Model{
             'status' => '1',
         ];
 
-        return $this -> _db -> field('carouselIcon,carouselDesc') -> where($where) -> order($data) -> select();
+        return $this -> _db -> field('carouselIcon,carouselDesc') -> where($where) -> order($data) -> limit(1,3) -> select();
     }
 }

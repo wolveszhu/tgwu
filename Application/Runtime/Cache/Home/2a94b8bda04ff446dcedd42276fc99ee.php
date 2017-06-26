@@ -13,7 +13,7 @@
     <script src="/tangguowu/Public/Home/Js/index.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#myCarousel').carousel({interval:5000});
+            $('#myCarousel').carousel({interval: 5000});
         });
     </script>
 </head>
@@ -23,24 +23,16 @@
     <!-- 轮播（Carousel）指标 -->
     <ol class="carousel-indicators carouselInd">
         <li data-target="#myCarousel" data-slide-to="0" class="active carouselLi"></li>
-        <li data-target="#myCarousel" data-slide-to="1" class="carouselLi"></li>
-        <li data-target="#myCarousel" data-slide-to="1" class="carouselLi"></li>
-        <li data-target="#myCarousel" data-slide-to="1" class="carouselLi"></li>
+        <?php if(is_array($cars)): $i = 0; $__LIST__ = $cars;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$car): $mod = ($i % 2 );++$i;?><li data-target="#myCarousel" data-slide-to="1" class="carouselLi"></li><?php endforeach; endif; else: echo "" ;endif; ?>
     </ol>
     <!-- 轮播（Carousel）项目 -->
     <div class="carousel-inner">
         <div class="item active">
-            <img src="/tangguowu/Public/Home/Image/juhuasuan.png" class="carPto" alt="juhuasuan">
+            <?php if(is_array($carousels)): $i = 0; $__LIST__ = $carousels;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$carousel): $mod = ($i % 2 );++$i;?><img src="<?php echo (getUrl($carousel["carouselicon"])); ?>" class="carPto" alt="<?php echo ($carousel["carouseldesc"]); ?>"><?php endforeach; endif; else: echo "" ;endif; ?>
         </div>
-        <?php if(is_array($carousels)): $i = 0; $__LIST__ = $carousels;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$carousel): $mod = ($i % 2 );++$i;?><div class="item">
-                <img src="<?php echo (getUrl($carousel["carouselicon"])); ?>" class="carPto" alt="<?php echo ($carousel["carouseldesc"]); ?>">
+        <?php if(is_array($cars)): $i = 0; $__LIST__ = $cars;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$car): $mod = ($i % 2 );++$i;?><div class="item">
+                <img src="<?php echo (getUrl($car["carouselicon"])); ?>" class="carPto" alt="<?php echo ($car["carouseldesc"]); ?>">
             </div><?php endforeach; endif; else: echo "" ;endif; ?>
-        <!--<div class="item active">
-            <img src="/tangguowu/Public/Home/Image/juhuasuan.png" class="carPto" alt="juhuasuan">
-        </div>
-        <div class="item">
-            <img src="/tangguowu/Public/Home/Image/zhui.png" class="carPto" alt="zhui">
-        </div>-->
     </div>
     <!-- 轮播（Carousel）导航 -->
     <a class="carousel-control left" href="#myCarousel" data-slide="prev"></a>
@@ -49,71 +41,15 @@
 <!--导航栏部分-->
 <div class="container" id="container">
     <div class="row navbar">
-        <div class="col-xs-3">
-            <!-- TUDO a标签 图片居中 -->
-            <div class="nav">
-                <a href="#">
-                    <img src="/tangguowu/Public/Home/Image/jianguo.png" class="cateImg"  alt="坚果">
-                </a>
-            </div>
-            <div class="cdesc">坚果类</div>
-        </div>
-        <div class="col-xs-3">
-            <div class="nav">
-                <a href="#">
-                    <img src="/tangguowu/Public/Home/Image/wanju.png" class="cateImg" alt="玩具">
-                </a>
-            </div>
-            <div class="cdesc">玩具类</div>
-        </div>
-        <div class="col-xs-3">
-            <div class="nav">
-                <a href="#">
-                    <img src="/tangguowu/Public/Home/Image/tangguo.png" class="cateImg" alt="糖果">
-                </a>
-            </div>
-            <div class="cdesc">糖果类</div>
-        </div>
-        <div class="col-xs-3">
-            <div class="nav">
-                <a href="#">
-                    <img src="/tangguowu/Public/Home/Image/yinliao.png" class="cateImg" alt="饮料">
-                </a>
-            </div>
-            <div class="cdesc">饮料类</div>
-        </div>
-        <div class="col-xs-3">
-            <div class="nav">
-                <a href="#">
-                    <img src="/tangguowu/Public/Home/Image/jinkou.png" class="cateImg" alt="进口食品">
-                </a>
-            </div>
-            <div class="cdesc">进口食品专区</div>
-        </div>
-        <div class="col-xs-3">
-            <div class="nav">
-                <a href="#">
-                    <img src="/tangguowu/Public/Home/Image/lu.png" class="cateImg" alt="卤食">
-                </a>
-            </div>
-            <div class="cdesc">卤食类</div>
-        </div>
-        <div class="col-xs-3">
-            <div class="nav">
-                <a href="#">
-                    <img src="/tangguowu/Public/Home/Image/rou.png" class="cateImg" alt="肉制品">
-                </a>
-            </div>
-            <div class="cdesc">肉类制品</div>
-        </div>
-        <div class="col-xs-3">
-            <div class="nav">
-                <a href="#">
-                    <img src="/tangguowu/Public/Home/Image/mijian.png" class="cateImg" alt="蜜饯果干">
-                </a>
-            </div>
-            <div class="cdesc">蜜饯果干</div>
-        </div>
+        <?php if(is_array($categorys)): $i = 0; $__LIST__ = $categorys;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$category): $mod = ($i % 2 );++$i;?><div class="col-xs-3">
+                <!-- TUDO a标签 图片居中 -->
+                <div class="nav">
+                    <a href="<?php echo U('Category/index',array('id'=>$category['id']));?>">
+                        <img src="<?php echo (getUrl($category["categoryicon"])); ?>" class="cateImg" alt="<?php echo ($category["categoryname"]); ?>">
+                    </a>
+                </div>
+                <div class="cdesc"><?php echo ($category["categoryname"]); ?></div>
+            </div><?php endforeach; endif; else: echo "" ;endif; ?>
     </div>
 </div>
 <!--特价and爆款-->
@@ -125,82 +61,24 @@
 <div class="container" id="container1">
     <div class="row">
         <div class="col-xs-3"></div>
-        <div class="col-xs-6 new"><img src="/tangguowu/Public/Image/hengxian.png">&nbsp;新品上架&nbsp;<img src="/tangguowu/Public/Image/hengxian.png"></div>
-        <div class="col-xs-3 more"><a href="<?php echo U('newProduct/more');?>" class="morePro">更多&nbsp;<img src="/tangguowu/Public/Image/more.png" class="gengduo"></a></div>
+        <div class="col-xs-6 new"><img src="/tangguowu/Public/Image/hengxian.png">&nbsp;新品上架&nbsp;<img
+                src="/tangguowu/Public/Image/hengxian.png"></div>
+        <div class="col-xs-3 more"><a href="<?php echo U('newProduct/more');?>" class="morePro">更多&nbsp;<img
+                src="/tangguowu/Public/Image/more.png" class="gengduo"></a></div>
     </div>
     <div class="row">
-        <div class="col-xs-4 newpro">
-            <a href="#">
-                <img src="/tangguowu/Public/Home/Image/hefeng.png" class="proImg" alt="坚果">
-            </a>
-            <div class="desc">抹茶味正宗山货薯条500g/袋</div>
-            <div class="shoucang">
-                <div class="row">
-                    <div class="col-xs-3"><img src="/tangguowu/Public/Image/shoucang.png" class="scPto"></div>
-                    <div class="col-xs-9">25人已收藏</div>
+        <?php if(is_array($wares)): $i = 0; $__LIST__ = $wares;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$ware): $mod = ($i % 2 );++$i;?><div class="col-xs-4 newpro">
+                <a href="#">
+                    <img src="<?php echo (getUrl($ware["warecover"])); ?>" class="proImg" alt="<?php echo ($ware["waredesc"]); ?>">
+                </a>
+                <div class="desc"><?php echo ($ware["waredesc"]); ?></div>
+                <div class="shoucang">
+                    <div class="row">
+                        <div class="col-xs-3"><img src="/tangguowu/Public/Image/shoucang.png" class="scPto"></div>
+                        <div class="col-xs-9"><?php echo ($ware["colltimes"]); ?>人已收藏</div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-xs-4 newpro">
-            <a href="#">
-                <img src="/tangguowu/Public/Home/Image/putao.png" class="proImg" alt="玩具">
-            </a>
-            <div class="desc">新疆葡萄干500g/袋</div>
-            <div class="shoucang">
-                <div class="row">
-                    <div class="col-xs-3"><img src="/tangguowu/Public/Image/shoucang.png" class="scPto"></div>
-                    <div class="col-xs-9">62人已收藏</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-4 newpro">
-            <a href="#">
-                <img src="/tangguowu/Public/Home/Image/huasheng.png" class="proImg" alt="糖果">
-            </a>
-            <div class="desc">竹炭花生正宗台湾口味500g/袋</div>
-            <div class="shoucang">
-                <div class="row">
-                    <div class="col-xs-3"><img src="/tangguowu/Public/Image/shoucang.png" class="scPto"></div>
-                    <div class="col-xs-9">462人已收藏</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-4 newpro">
-            <a href="#">
-                <img src="/tangguowu/Public/Home/Image/liulian.png" class="proImg" alt="饮料">
-            </a>
-            <div class="desc">榴莲干450g/袋</div>
-            <div class="shoucang">
-                <div class="row">
-                    <div class="col-xs-3"><img src="/tangguowu/Public/Image/shoucang.png" class="scPto"></div>
-                    <div class="col-xs-9">56人已收藏</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-4 newpro">
-            <a href="#">
-                <img src="/tangguowu/Public/Home/Image/binggan.png" class="proImg" alt="进口食品">
-            </a>
-            <div class="desc">进口食品专区</div>
-            <div class="shoucang">
-                <div class="row">
-                    <div class="col-xs-3"><img src="/tangguowu/Public/Image/shoucang.png" class="scPto"></div>
-                    <div class="col-xs-9">652人已收藏</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-4 newpro">
-            <a href="#">
-                <img src="/tangguowu/Public/Home/Image/rousong.png" class="proImg" alt="卤食">
-            </a>
-            <div class="desc">卤食类</div>
-            <div class="shoucang">
-                <div class="row">
-                    <div class="col-xs-3"><img src="/tangguowu/Public/Image/shoucang.png" class="scPto"></div>
-                    <div class="col-xs-9">123人已收藏</div>
-                </div>
-            </div>
-        </div>
+            </div><?php endforeach; endif; else: echo "" ;endif; ?>
     </div>
 </div>
 <div class="bot">
@@ -216,21 +94,21 @@
     var widthDev = document.documentElement.clientWidth;
     var heightDev = widthDev / 1.5;
     var carPto = $(".carPto");
-    carPto.attr('width',widthDev);
-    carPto.attr('height',heightDev);
+    carPto.attr('width', widthDev);
+    carPto.attr('height', heightDev);
 
     var navWH = $(".nav").width();
 
     var cateImgWH = $(".cateImg");
-    cateImgWH.attr('width',navWH);
-    cateImgWH.attr('height',navWH);
+    cateImgWH.attr('width', navWH);
+    cateImgWH.attr('height', navWH);
 
     var width = $(".newpro").width() * 0.9;
     var height = width * 1.5;
     var imgWH = $(".proImg");
-    imgWH.attr('width',width);
-    imgWH.attr('height',height);
+    imgWH.attr('width', width);
+    imgWH.attr('height', height);
     var desc = $(".desc");
-    desc.attr('width',width);
+    desc.attr('width', width);
 </script>
 </html>

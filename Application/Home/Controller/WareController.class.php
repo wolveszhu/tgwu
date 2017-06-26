@@ -10,6 +10,9 @@ use Think\Controller;
 
 class WareController extends Controller {
     public function index(){
+        $id = intval($_GET['id']);
+        $ware = D('Wares') -> getWareById($id);
+        $this -> assign('ware',$ware);
         $this -> display();
     }
 }

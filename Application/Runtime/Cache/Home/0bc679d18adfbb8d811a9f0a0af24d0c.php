@@ -16,7 +16,7 @@
     <!-- 轮播（Carousel）项目 -->
     <div class="carousel-inner tgDet">
         <div class="item active">
-            <img src="/tangguowu/Public/Home/Image/tangguoDet.png" class="tangguo" alt="juhuasuan">
+            <img src="<?php echo (getUrl($ware["waremstchart"])); ?>" class="tangguo" alt="juhuasuan">
         </div>
         <div class="item">
             <img src="/tangguowu/Public/Home/Image/tangguoDet.png" class="tangguo" alt="zhui">
@@ -27,8 +27,8 @@
     <a class="carousel-control right" href="#myCarousel" data-slide="next"></a>
 </div>
 <div class="desDet">
-    <div class="det">给家里的风景嘎多发个个给对方空间更卡了地方</div>
-    <div class="lable1">货号:545269852</div>
+    <div class="det"><?php echo ($ware["waredesc"]); ?></div>
+    <div class="lable1"><?php echo ($ware["warecode"]); ?></div>
 </div>
 </body>
 <script src="/tangguowu/Public/Js/jquery.min.js"></script>
