@@ -11,6 +11,13 @@
     <script src="/tangguowu/Public/Js/jquery.min.js"></script>
     <script src="/tangguowu/Public/Js/bootstrap.min.js"></script>
     <script src="/tangguowu/Public/Home/Js/index.js"></script>
+    <script src="/tangguowu/Public/Js/layer/layer.js"></script>
+    <script src="/tangguowu/Public/Js/dialog.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myCarousel').carousel({interval: 5000});
+        });
+    </script>
 </head>
 <body id="body">
 <!--新品上市-->
@@ -28,7 +35,7 @@
                 <div class="desc"><?php echo ($ware["waredesc"]); ?></div>
                 <div class="shoucang">
                     <div class="row">
-                        <div class="col-xs-3"><img src="/tangguowu/Public/Image/shoucang.png" class="scPto"></div>
+                        <div class="col-xs-3"><img src="/tangguowu/Public/Image/shoucang.png" attr-id="<?php echo ($ware["id"]); ?>" class="scPto ware-detail"></div>
                         <div class="col-xs-9"><?php echo ($ware["colltimes"]); ?>人已收藏</div>
                     </div>
                 </div>
@@ -36,6 +43,11 @@
     </div>
 </div>
 </body>
+<script>
+    var SCOPE = {
+        'coll_url' : '<?php echo U("Index/collect");?>',
+    }
+</script>
 <script type="text/javascript">
     var width = $(".newpro").width() * 0.9;
     var height = width * 1.5;

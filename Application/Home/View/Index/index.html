@@ -1,24 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-    <title>糖果屋</title>
-    <meta name="keywords" content="糖果屋,玩具,坚果,糖果,饮料,进口食品,卤食,肉类制品,蜜饯果干">
-    <meta name="description" content="糖果屋,您购物的一站式天堂">
-    <link rel="stylesheet" href="__PUBLIC__/Home/Css/index.css" type="text/css">
-    <link rel="stylesheet" href="__PUBLIC__/Css/bootstrap.min.css" type="text/css">
-    <script src="__PUBLIC__/Js/jquery.min.js"></script>
-    <script src="__PUBLIC__/Js/bootstrap.min.js"></script>
-    <script src="__PUBLIC__/Js/layer/layer.js"></script>
-    <script src="__PUBLIC__/Js/dialog.js"></script>
-    <script src="__PUBLIC__/Home/Js/index.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#myCarousel').carousel({interval: 5000});
-        });
-    </script>
-</head>
+<include file="Index/header"/>
 <body id="body">
 <!--轮播图部分-->
 <div id="myCarousel" class="carousel slide">
@@ -108,11 +88,14 @@
     }
 </script>
 <script type="text/javascript">
-    var widthDev = document.documentElement.clientWidth;
+//    var widthDev = document.documentElement.clientWidth;
+    var widthDev = $(window).innerWidth();
     var heightDev = widthDev / 1.5;
     var carPto = $(".carPto");
-    carPto.attr('width', widthDev);
-    carPto.attr('height', heightDev);
+    carPto.css({
+        width:widthDev,
+        height:heightDev
+    });
 
     var navWH = $(".nav").width();
 

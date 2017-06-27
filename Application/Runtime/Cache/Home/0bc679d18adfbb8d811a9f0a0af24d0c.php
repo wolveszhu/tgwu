@@ -8,7 +8,16 @@
     <meta name="description" content="糖果屋,您购物的一站式天堂">
     <link rel="stylesheet" href="/tangguowu/Public/Home/Css/index.css" type="text/css">
     <link rel="stylesheet" href="/tangguowu/Public/Css/bootstrap.min.css" type="text/css">
+    <script src="/tangguowu/Public/Js/jquery.min.js"></script>
+    <script src="/tangguowu/Public/Js/bootstrap.min.js"></script>
     <script src="/tangguowu/Public/Home/Js/index.js"></script>
+    <script src="/tangguowu/Public/Js/layer/layer.js"></script>
+    <script src="/tangguowu/Public/Js/dialog.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myCarousel').carousel({interval: 5000});
+        });
+    </script>
 </head>
 <body id="body">
 <!--轮播图部分-->
@@ -31,13 +40,13 @@
     <div class="lable1"><?php echo ($ware["warecode"]); ?></div>
 </div>
 </body>
-<script src="/tangguowu/Public/Js/jquery.min.js"></script>
-<script src="/tangguowu/Public/Js/bootstrap.min.js"></script>
 <script type="text/javascript">
-    var width = document.documentElement.clientWidth;
+    var width = $(window).innerWidth();
     var height = width / 1.5;
     var tangguo = $(".tangguo");
-    tangguo.attr('width',width);
-    tangguo.attr('height',height);
+    tangguo.css({
+        width:width,
+        height:height
+    });
 </script>
 </html>

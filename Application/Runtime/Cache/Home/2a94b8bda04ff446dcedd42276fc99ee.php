@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="/tangguowu/Public/Css/bootstrap.min.css" type="text/css">
     <script src="/tangguowu/Public/Js/jquery.min.js"></script>
     <script src="/tangguowu/Public/Js/bootstrap.min.js"></script>
+    <script src="/tangguowu/Public/Home/Js/index.js"></script>
     <script src="/tangguowu/Public/Js/layer/layer.js"></script>
     <script src="/tangguowu/Public/Js/dialog.js"></script>
-    <script src="/tangguowu/Public/Home/Js/index.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $('#myCarousel').carousel({interval: 5000});
@@ -98,11 +98,16 @@
     }
 </script>
 <script type="text/javascript">
-    var widthDev = document.documentElement.clientWidth;
+//    var widthDev = document.documentElement.clientWidth;
+    var widthDev = $(window).innerWidth();
     var heightDev = widthDev / 1.5;
     var carPto = $(".carPto");
-    carPto.attr('width', widthDev);
-    carPto.attr('height', heightDev);
+    /*carPto.attr('width', widthDev);
+    carPto.attr('height', heightDev);*/
+    carPto.css({
+        width:widthDev,
+        height:heightDev
+    });
 
     var navWH = $(".nav").width();
 
