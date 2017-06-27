@@ -40,17 +40,11 @@ $(function() {
             // response true ,false
             if(response) {
                 var obj = JSON.parse(data); //由JSON字符串转换为JSON对象
-
                 $('#' + file.id).find('.data').html(' 上传完毕');
 
                 var image_data = $("#file_upload_images").val();
-                image_data = image_data+";"+obj.data+";";
-                // console.log(image_data);
-                obj.newdata = SCOPE.root + obj.data;
-
-                // $("#upload_org_code_imgs").attr("src",obj.newdata);
-                $("#file_upload_images").attr('value',obj.data);
-                // $("#upload_org_code_imgs").show();
+                image_data = obj.data+";"+image_data;
+                $("#file_upload_images").attr('value',image_data);
             }else{
                 alert('上传失败');
             }

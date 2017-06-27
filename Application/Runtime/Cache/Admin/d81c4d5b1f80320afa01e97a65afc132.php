@@ -145,7 +145,7 @@
                             <label class="col-sm-2 control-label">商品主题图:</label>
                             <div class="col-sm-5">
                                 <input id="file_upload_mut"  type="file" name="wareMstChart">
-                                <img style="display: none" id="upload_org_code_imgs" src="" width="150" height="150">
+                                <!--<img style="display: none" id="upload_org_code_imgs" src="" width="150" height="150">-->
                                 <input id="file_upload_images" name="wareMstChart" type="hidden" multiple="true" value="">
                             </div>
                         </div>

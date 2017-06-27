@@ -150,8 +150,8 @@
                                         <td><?php echo ($ware["id"]); ?></td>
                                         <td><?php echo ($ware["warename"]); ?></td>
                                         <td><?php echo ($ware["waredesc"]); ?></td>
-                                        <td><?php echo ($ware["warecover"]); ?></td>
-                                        <td><?php echo ($ware["waremstchart"]); ?></td>
+                                        <td><?php echo (getSubStr($ware["warecover"])); ?></td>
+                                        <td><?php echo (getSubStr($ware["waremstchart"])); ?></td>
                                         <td><?php echo ($ware["categoryid"]); ?></td>
                                         <td><?php echo ($ware["wareprice"]); ?></td>
                                         <td><?php echo ($ware["warecode"]); ?></td>

@@ -85,3 +85,17 @@ function isnull($int){
 function getUrl($data){
     return __ROOT__.$data;
 }
+
+function getSubStr($str){
+    $len = strlen($str);
+    if($len<=36){
+        $newStr = substr($str,'-17');
+    }else{
+        $arr = explode(';',$str);
+        $newStr = '';
+        for($i = 0;$i < count($arr) - 1;$i ++){
+            $newStr = substr($arr[$i],'-17') . '<br/>' . $newStr;
+        }
+    }
+    return $newStr;
+}
